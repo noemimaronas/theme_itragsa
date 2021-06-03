@@ -1,0 +1,63 @@
+#page-grade-report-user-index {
+    div[role=main] {
+        table.user-grade {
+            tbody {
+                tr {
+                    td {
+                        &.b1l {
+                            min-width: 0!important;
+                            width: 0!important;
+                        }
+                        th {
+                            &.levelodd {
+                                background-color: white!important;
+                                padding-left: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#page-grade-report-grader-index {
+    overflow-x: visible!important;
+    #page-wrapper {
+        overflow-x: visible!important;
+    }
+}
+
+#page-grade-report-quizanalytics-index {
+    nav.navbar {
+        margin: 0;
+        position: fixed;
+    }
+    #page {
+        margin-left: 80px;
+        margin-top: 64px;
+        width: calc(100% - 80px);
+    }
+    div#nav-drawer.closed a.list-group-item {
+        .m-l-0 {
+            margin: auto!important;
+        }
+        nav.list-group {
+            margin-bottom: 0;
+        }
+    }
+    footer#page-footer {
+        margin-left: 80px;
+    }
+}
+
+#page-grade-report-overview-index {
+    div[role='main'] {
+        table#overview-grade {
+            margin-bottom: 60px;
+        }
+        & > table.generaltable {
+            margin-top: 30px;
+        }
+    }
+}

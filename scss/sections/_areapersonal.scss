@@ -1,0 +1,606 @@
+body.pagelayout-mydashboard {
+    .courses_category {
+        display: none;
+    }
+}
+
+#page-my-index {
+    div#nav-drawer {
+        a.list-group-item[data-key='my-home'] {
+            .media .media-left .icon {
+                color: $primary;
+            }
+        }
+    }
+    #page-wrapper {
+        header#page-header {
+            .btn-secondary {
+                background-color: white;
+                color: $secondary;
+                &:hover {
+                    background-color: white;
+                    color: $secondary;
+                }
+            }
+            .page-context-header {
+                display: none;
+            }
+        }
+        .img_container {
+            height: 400px;
+            background-size: cover;
+            background-image: url([[pix:theme_itragsa|img_dash]]);
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            h2 {
+                color: $white;
+                text-align: center;
+            }
+            h6 {
+                color: $white;
+                font-weight: 500;
+                font-style: italic;
+                text-align: center;
+            }
+        }
+        #page-content {
+            #region-main-box {
+                #region-main {
+                    .card {
+                        .card-body {
+                            @media(max-width: 600px) {
+                                padding: 0;
+                            }
+                            div[role=main] {
+                                aside#block-region-content {
+                                    padding-top: 10px;
+                                    section {
+                                        &.block_coursesearch {
+                                            width: 100%;
+                                            background-color: $white;
+                                            .card-body {
+                                                max-width: 767px;
+                                                padding: 60px 20px;
+                                                margin: 0 auto;
+                                                width: 100%;
+                                                .card-text {
+                                                    fieldset.coursesearchbox {
+                                                        width: 100%;
+                                                        position: relative;
+                                                        label {
+                                                            display: none;
+                                                        }
+                                                        input {
+                                                            background-color: transparent;
+                                                            color: $white;
+                                                            border: 0;
+                                                            border-bottom: 1px solid $gray-400;
+                                                            font-size: 2em;
+                                                            padding: 8px 4px;
+                                                            width: 100%;
+                                                            padding-left: 10px;
+                                                            &:focus {
+                                                                border-bottom: 1px solid $primary;
+                                                            }
+                                                        }
+                                                        button {
+                                                            position: absolute;
+                                                            right: 5px;
+                                                            padding: 6px 16px;
+                                                            bottom: 36px;
+                                                            background-color: $primary;
+                                                            color: $white;
+                                                            &:hover {
+                                                                background-color: $white;
+                                                                border: 1px solid $primary;
+                                                                color: $primary;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        &.block_quickcourselist {
+                                            position: relative;
+                                            .card-body {
+                                                max-width: 767px;
+                                                padding: 40px 20px;
+                                                margin: 0;
+                                                width: 100%;
+                                                .card-text {
+                                                    form#quickcourseform {
+                                                        input {
+                                                            background: transparent;
+                                                            color: $secondary;
+                                                            border: 0;
+                                                            background-color: transparent;
+                                                            border-bottom: 1px solid $secondary;
+                                                            font-size: 1.4rem;
+                                                            padding: 8px 4px;
+                                                            width: 100%;
+                                                            padding-left: 10px;
+                                                            &:focus {
+                                                                border: 0;
+                                                                border-bottom: 1px solid $primary;
+                                                            }
+                                                            @media(max-width: 600px) {
+                                                                font-size: 1.2em;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ul#quickcourselist {
+                                                background-color: $white;
+                                                padding: 0;
+                                                border-radius: $normalBorderRadius;
+                                                position: absolute;
+                                                width: 90%;
+                                                z-index: 2;
+                                                box-shadow: $secondaryShadow;
+                                                overflow: hidden;
+                                                max-width: 767px;
+                                                li {
+                                                    padding: 10px 20px;
+                                                    border: none!important;
+                                                    &:hover {
+                                                        background-color: $primaryLightest;
+                                                    }
+                                                    &:first-child {
+                                                        padding-top: 20px;
+                                                    }
+                                                    &:last-child {
+                                                        padding-bottom: 20px;
+                                                    }
+                                                }
+                                            }
+                                            @media (max-width: 1450px) {
+                                                background-size: cover;
+                                            }
+                                        }
+                                        &.block_myoverview {
+                                            .progress {
+                                                height: 1rem;
+                                                border-radius: 50px;
+                                                overflow: hidden;
+                                                background-color: $primaryLightest!important;
+                                                border: 0!important;
+                                            }
+                                            .progress-bar {
+                                                background-color: $primary;
+                                            }
+                                            .small {
+                                                text-align: center;
+                                                top: -19px;
+                                                position: relative;
+                                            }
+                                            div[data-region="filter"] {
+                                                margin-bottom: 10px;
+                                                .dropdown {
+                                                    display: inline-block;
+                                                    width: auto;
+                                                    button#groupingdropdown {
+                                                        display: flex;
+                                                        align-items: center;
+                                                        width: 100%;
+                                                        span.d-sm-inline-block {
+                                                            width: 100%;
+                                                            overflow: hidden;
+                                                        }
+                                                    }
+                                                    @media screen and (max-width: 600px) {
+                                                        width: 100%;
+                                                    } 
+                                                }
+                                                .btn-outline-secondary {
+                                                    border-color: $primary;
+                                                    background-color: $white;
+                                                    color: $primary;
+                                                    &:hover {
+                                                        background: $primary;
+                                                        color: $white;
+                                                    }
+                                                    &:focus {
+                                                        box-shadow: none;
+                                                        outline: 0;
+                                                    }
+                                                }
+                                            }
+                                            .course-info-container {
+                                                background: $white;
+                                                padding: 20px;
+                                                a.coursename {
+                                                    font-weight: 700;
+                                                }
+                                                .dropdown {
+                                                    position: absolute;
+                                                    right: 10px;
+                                                    top: 10px;
+                                                    button {
+                                                        background-color: $white;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        &.block_timeline {
+                                            .card-text {
+                                                h5 {
+                                                    color: $primary;
+                                                    margin-bottom: 10px;
+                                                }
+                                            }
+                                            .btn-outline-secondary {
+                                                border-color: $primary;
+                                                background-color: $white;
+                                                color: $primary;
+                                                &:hover {
+                                                    background: $primary;
+                                                    color: $white;
+                                                }
+                                                &:focus {
+                                                    box-shadow: none;
+                                                    outline: 0;
+                                                }
+                                            }
+                                            div[data-region='paging-control-container'] {
+                                                margin-top: 20px;
+                                            }
+                                        }
+                                        &.block_quickfindlist {
+                                            .card-body {
+                                                max-width: 767px;
+                                                margin: 0;
+                                                width: 100%;
+                                                padding: 40px 20px;
+                                                .card-text {
+                                                    position: relative;
+                                                    form[id*='quickfindform'] {
+                                                        input.quickfindlistsearch {
+                                                            width: 100%;
+                                                            background: transparent;
+                                                            border: 0;
+                                                            color: $secondary;
+                                                            background-color: transparent;
+                                                            border-bottom: 1px solid $secondary;
+                                                            font-size: 1.4rem;
+                                                            padding: 8px 4px;
+                                                            padding-left: 10px;
+                                                            &:focus {
+                                                                border-bottom: 1px solid $primary;
+                                                            }
+                                                            @media(max-width: 600px) {
+                                                                font-size: 1.2em;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ul[id*='quickfindlist'] {
+                                                background-color: $white;
+                                                padding: 0;
+                                                border-radius: $normalBorderRadius;
+                                                position: absolute;
+                                                width: 100%;
+                                                z-index: 2;
+                                                box-shadow: $secondaryShadow;
+                                                overflow: hidden;
+                                                li {
+                                                    padding: 10px 20px;
+                                                    border: none!important;
+                                                    &:hover {
+                                                        background-color: $primaryLightest;
+                                                    }
+                                                    &:first-child {
+                                                        padding-top: 20px;
+                                                    }
+                                                    &:last-child {
+                                                        padding-bottom: 20px;
+                                                    }
+                                                }
+                                            }
+                                            @media (max-width: 1450px) {
+                                                background-size: cover;
+                                            }
+                                        }
+                                        &.block_lw_courses {
+                                            .card-body {
+                                                padding: 0;
+                                            }
+                                            h5 {
+                                                margin-bottom: 20px;
+                                                color: $secondary;
+                                                font-size: 2em;
+                                            }
+                                            a#box-or-lines {
+                                                display: none;
+                                            }
+                                            .lw_courses_list {
+                                                display: flex;
+                                                flex-wrap: wrap;
+                                                justify-content: flex-start;
+                                                .coursebox {
+                                                    border: none;
+                                                    min-height: 300px;
+                                                    transition: all .3s ease-in-out;
+                                                    &.col-md-6 {
+                                                        flex: 0 0 48%;
+                                                        max-width: 48%;
+                                                    }
+                                                    &.span12 {
+                                                        max-width: 48%;
+                                                        margin: 1%;
+                                                        height: auto;
+                                                        padding: 0!important;
+                                                        min-height: 260px;
+                                                        box-shadow: none;
+                                                        .teacher_image_wrap {
+                                                            display: none;
+                                                        }
+                                                        .image_wrap {
+                                                            float: none;
+                                                            max-width: 100%;
+                                                            width: 100%;
+                                                            height: 140px;
+                                                        }
+                                                        .course_title {
+                                                            padding: 16px;
+                                                            width: 100%;
+                                                            padding-bottom: 0;
+                                                            h2.title {
+                                                                border: none;
+                                                                font-size: 1.3em;
+                                                                margin-top: 0;
+                                                                top: 0;
+                                                                a {
+                                                                    color: $secondary;
+                                                                    text-shadow: none!important;
+                                                                }
+                                                            }
+                                                        }
+                                                        &:hover {
+                                                            h2.title {
+                                                                a {
+                                                                    color: $primary;
+                                                                }
+                                                            }
+                                                        }
+                                                        .progress {
+                                                            padding: unset;
+                                                            background: $gray-200;
+                                                            position: absolute;
+                                                            top: 202px;
+                                                            width: 100%;
+                                                            height: 16px;
+                                                            max-width: 160px;
+                                                            left: 16px;
+                                                            border-radius: 100px;
+                                                            &::before {
+                                                                top: 7px;
+                                                            }
+                                                            .value {
+                                                                background-color: $primary;
+                                                            }
+                                                        }
+                                                        .course_description {
+                                                            padding: 0 16px 24px 16px;
+                                                            color: $secondary;
+                                                            top: 68%;
+                                                            width: 100%;
+                                                        }
+                                                        .categorypath {
+                                                            display: none;
+                                                        }
+                                                        .box.flush.py-3 {
+                                                            display: none;
+                                                        }
+                                                        @media(max-width: 920px) {
+                                                            max-width: 48%;
+                                                            min-width: 48%;
+                                                            margin: 1%;
+                                                        }
+                                                        @media(max-width: 767px) {
+                                                            max-width: 100%;
+                                                            margin: 0;
+                                                        }
+                                                    }
+                                                    &:not(.span12) {
+                                                        min-width: 48%;
+                                                        min-height: 260px;
+                                                        margin: 1%;
+                                                        border: 5px solid $white;
+                                                        position: relative;
+                                                        transition: $transition;
+                                                        .teacher_image_wrap {
+                                                            display: none;
+                                                        }
+                                                        .course_title {
+                                                            background: white;
+                                                            top: 70%;
+                                                            width: 100%;
+                                                            padding-bottom: 0;
+                                                            h2.title {
+                                                                text-transform: none;
+                                                                margin-top: 0;
+                                                                top: 0;
+                                                                text-align: left;
+                                                                a {
+                                                                    color: $secondary;
+                                                                    text-shadow: none!important;
+                                                                    font-size: 1.7em;
+                                                                }
+                                                            }
+                                                            &:hover {
+                                                                h2.title {
+                                                                    a {
+                                                                        color: $primary;
+                                                                    }
+                                                                }
+                                                            }
+                                                            &::after {
+                                                                background: $white;
+                                                                top: -10px;
+                                                                margin-top: 0;
+                                                                height: 75px;
+                                                            }
+                                                        }
+                                                        .progress {
+                                                            background: $gray-200;
+                                                            padding: unset;
+                                                            width: 100%;
+                                                            max-width: 170px;
+                                                            height: 16px;
+                                                            top: 202px;
+                                                            border-radius: 100px;
+                                                            margin: 0 10px;
+                                                            opacity: 1;
+                                                            &::before {
+                                                                top: 7px;
+                                                                color: #fff;
+                                                                content: attr(data-label);
+                                                                position: absolute;
+                                                                text-align: center;
+                                                                left: 0;
+                                                                right: 0;
+                                                            }
+                                                            .value {
+                                                                background-color: $primary;
+                                                            }
+                                                        }
+                                                        .course_description {
+                                                            color: $secondary;
+                                                            top: 68%;
+                                                            width: 100%;
+                                                            display: none;
+                                                        }
+                                                        .categorypath {
+                                                            display: none;
+                                                        }
+                                                        @media(max-width: 920px) {
+                                                            max-width: 48%;
+                                                            min-width: 48%;
+                                                        }
+                                                        @media(max-width: 767px) {
+                                                            max-width: 100%;
+                                                            margin: 0!important;
+                                                            flex: 0 0 100%!important;
+                                                        }
+                                                    }
+                                                    &:hover {
+                                                        &:not(.span12) {
+                                                            .course_title {
+                                                                transition: none;
+                                                                h2.title {
+                                                                    margin-top: 0;
+                                                                    top: 0;
+                                                                    a {
+                                                                        &:hover {
+                                                                            color: $secondary;
+                                                                        }
+                                                                    }
+                                                                }
+                                                                &:hover {
+                                                                    h2.title {
+                                                                        margin-top: 0;
+                                                                        a {
+                                                                            color: $secondary;
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                    &:hover {
+                                                        box-shadow: $secondaryShadow;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .courses_category {
+                                display: block;
+                                h3 {
+                                    margin-top: 40px;
+                                    margin-bottom: 20px;
+                                    font-size: 1.6em;
+                                }
+                                div {
+                                    &.courses_category--quickstart, &.courses_category--enroll, &.courses_category--stripepayment {
+                                        position: relative;
+                                        i.fas.fa-chevron-left.slick-arrow {
+                                            position: absolute;
+                                            left: 10px;
+                                            top: 10px;
+                                            padding: 82px 20px;
+                                            z-index: 1;
+                                            color: $white;
+                                            background-color: rgba(0, 0, 0, .2);
+                                            border-radius: $normalBorderRadius;
+                                            &:hover {
+                                                background-color: rgba(0, 0, 0, .5);
+                                                cursor: pointer;
+                                            }
+                                            &::before {
+                                                content: '\f053';
+                                                font-family: 'FontAwesome';
+                                                font-style: initial;
+                                            }
+                                        }
+                                        i.fas.fa-chevron-right.slick-arrow {
+                                            position: absolute;
+                                            right: 10px;
+                                            top: 10px;
+                                            padding: 82px 20px;
+                                            z-index: 1;
+                                            color: $white;
+                                            background-color: rgba(0, 0, 0, .2);
+                                            border-radius: $normalBorderRadius;
+                                            &:hover {
+                                                background-color: rgba(0, 0, 0, .5);
+                                                cursor: pointer;
+                                            }
+                                            &::before {
+                                                content: '\f054';
+                                                font-family: 'FontAwesome';
+                                                font-style: initial;
+                                            }
+                                        }
+                                    }
+                                    a.block_autoenrol {
+                                        height: 180px;
+                                        border-radius: $normalBorderRadius;
+                                        font-size: 18px;
+                                        margin: 10px;
+                                        color: $white;
+                                        font-weight: 600;
+                                        display: flex;
+                                        align-items: flex-end;
+                                        padding: 20px;
+                                        box-shadow: $secondaryShadow;
+                                        transition: $transition;
+                                        &:hover {
+                                            transform: scale(1.06);
+                                        }
+                                    }
+                                    .slick-track {
+                                        margin: 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+body[id*='page-message'] {
+    .img_container, .courses_category {
+        display: none;
+    }
+}

@@ -1,0 +1,25 @@
+body#page-report-progress-index {
+    ul.progress-actions {
+        padding-left: 0;
+        text-align: left;
+        margin-top: 40px;
+        li {
+            display: inline-block;
+            a {
+                padding: 10px 20px;
+                background-color: $secondary;
+                color: $white;
+                transition: $transition;
+                &:hover {
+                    transform: scale(1.05);
+                }
+                &::before {
+                    content: "\f019";
+                    font-family: 'Fontawesome';
+                    color: white;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}

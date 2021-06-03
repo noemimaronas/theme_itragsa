@@ -1,0 +1,59 @@
+#page-badges-index {
+    table.collection {
+        border: 0;
+        thead {
+            display: none;
+        }
+        td {
+            border: 0;
+            padding: 2px;
+            &.name {
+                a {
+                    img {
+                        width: 40px;
+                        margin-bottom: 10px;
+                    }
+                    span {
+                        font-size: 28px;
+                        color: $gray-900;
+                    }
+                }
+            }
+        }
+        tbody {
+            tr{
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                width: 32%;
+                float: left;
+                margin-right: 2%;
+                margin-bottom: 20px;
+                background-color: $white;
+                &:nth-child(3n) {
+                    margin-right: 0;
+                }
+                &:nth-of-type(odd) {
+                    background-color: $white;
+                }
+                @media (max-width: 1120px) {
+                    width: 49%;
+                    margin-right: 2%;
+                    &:nth-child(3n) {
+                        margin-right: 2%;
+                    }
+                    &:nth-child(2n) {
+                        margin-right: 0;
+                    }
+                }
+                @media (max-width: 720px) {
+                    width: 100%;
+                    margin-right: 0;
+                    &:nth-child(2n) {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,200 @@
+#page-course-view-tiles {
+    div[role=main] {
+        h4.activitytitle {
+            font-weight: 600!important;
+        }
+        ul#multi_section_tiles {
+            max-width: 998px!important;
+            li {
+                &.tile {
+                    border: none;
+                    background-color: $white;
+                    box-shadow: $secondaryShadow;
+                    padding: 20px;
+                    border-radius: $normalBorderRadius;
+                    max-width: 600px!important;
+                    max-height: fit-content;
+                    .tile-content {
+                        .tile-top {
+                            .tile-icon {
+                                i {
+                                    position: relative;
+                                    color: $primary;
+                                }
+                            }
+                        }
+                        .tile-text {
+                            text-align: left;
+                            width: 100%;
+                            height: auto;
+                            min-height: 20px;
+                            display: block;
+                            padding-top: 4px;
+                            position: relative;
+                            display: block;
+                            span {
+                                position: relative;
+                                top: 0;
+                                display: block;
+                                transform: none;
+                                h3 {
+                                    color: $secondary;
+                                }
+                            }
+                        }
+                        .progress-indic {
+                            svg {
+                                circle {
+                                    &.whole {
+                                        stroke: $primaryLightest;
+                                    }
+                                    &.partial {
+                                        stroke: $primary;
+                                    }
+                                }
+                            }
+                            text {
+                                font-size: 14px!important;
+                            }
+                        }
+                    }
+                    h3 {
+                        margin-top: 10px;
+                        font-weight: 600;
+                    }
+                    @media screen and (max-width: 600px) {
+                        max-width: 100%!important;
+                        flex-basis: 100%!important;
+                    }
+                    &.phototile {
+                        .photo-tile-text {
+                            position: relative;
+                            h3 {
+                                background-color: transparent;
+                            }
+                        }
+                        .progress-indic {
+                            background-color: transparent;
+                        }
+                        &::before {
+                            background: $homeprimaryOp;
+                            content: '';
+                            width: 100%;
+                            height: 100%;
+                            left: 0;
+                            top: 0;
+                            border-radius: $normalBorderRadius;
+                            position: absolute;
+                        }
+                    }
+                }
+                &.moveablesection {
+                    .content {
+                        .tileiconcontainer {
+                            span {
+                                i {
+                                    position: relative;
+                                    color: $primary;
+                                }
+                            }
+                        }
+                        .sectiontitlecontainer {
+                            .sectiontitle {
+                                h2 {
+                                    margin-left: 10px;
+                                    color: $secondary;
+                                    font-size: .9em;
+                                    font-family: $textfont;
+                                }
+                            }
+                        }
+                        ul.section {
+                            li.activity {
+                                padding: 20px 10px;
+                                font-family: $textfont;
+                            }
+                        }
+                        h4.activitytitle {
+                            font-family: $textfont;
+                        }
+                    }
+                }
+            }
+        }
+        ul#single_section_tiles {
+            .navigation-arrows {
+                i::before {
+                    font-size: 20px;
+                }
+            }
+            .tileiconcontainer {
+                display: none;
+            }
+            .pagesechead {
+                .sectiontitle {
+                    font-size: 28px;
+                    &::after {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.format-tiles .course-content li.activity.label h1, .format-tiles .course-content .section li.activity.label h2, .format-tiles .course-content li.activity.label h3, .format-tiles .course-content li.activity.label h4, .format-tiles .editor_atto_content_wrap h1, .format-tiles .editor_atto_content_wrap h2, .format-tiles .editor_atto_content_wrap h3, .format-tiles .editor_atto_content_wrap h4 {
+    border-left-color: $primary!important;
+    border-left-width: 4px!important;
+}
+
+.format-tiles .course-content ul.section.nosubtiles li.activity.modtype_forum .mod-indent {
+    display: none;
+}
+
+.format-tiles .progress-indic .progress-indic-label {
+    font-size: .75em;
+}
+
+.format-tiles ul.tiles .headerabovetiles button.selected, .headerabovetiles button:active, .headerabovetiles button:focus, .format-tiles .modal-header {
+    background-color: $primary;
+}
+
+.format-tiles li.activity.subtile {
+    background-color: #fdfdfd;
+}
+
+.format-tiles li.activity.subtile.assign {
+    border-top-color: $primary;
+}
+
+.format-tiles li.activity.subtile.page {
+    border-top-color: $secondary;
+}
+
+.format-tiles li.activity.subtile.choice {
+    border-top-color: $tertiary;
+}
+
+.format-tiles li.activity.subtile.book {
+    border-top-color: $primaryLight;
+}
+
+.format-tiles li.activity.subtile.forum, .format-tiles li.activity.subtile.chat {
+    border-top-color: $primaryLightest;
+}
+
+.format-tiles li.activity.subtile.resource.pdf {
+    border-top-color: $secondaryLight;
+}
+
+.format-tiles a.nav-link {
+    color: $gray-600;
+}
+
+.format-tiles nav.navbar a.nav-link {
+    color: $navbar;
+}
+
+.format-tiles .modal-header .close {
+    color: $gray-700!important;
+}

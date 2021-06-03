@@ -1,0 +1,43 @@
+body#page-course-view-onetopic {
+    &.editing {
+        .jsenabled .hiddenifjs {
+            display: block;
+        }
+    }
+    .course-content {
+        .section-navigation {
+            .mdl-left, .mdl-right {
+                a {
+                    padding: 12px 24px;
+                    background-color: white;
+                    border-radius: 5px;
+                    position: relative;
+                    transition: $transitionSlow;
+                    display: inline-block;
+                    &:hover {
+                        box-shadow: $btnShadow;
+                    }
+                }
+            }
+            .mdl-left {
+                a {
+                    transition: $transitionSlow;
+                    display: inline-block;
+                    &:hover {
+                        left: -2px;
+                    }
+                }
+            }
+            .mdl-right {
+                a {
+                    transition: $transitionSlow;
+                    display: inline-block;
+                    &:hover {
+
+                        left: 2px;
+                    }
+                }
+            }
+        }
+    }
+}

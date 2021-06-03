@@ -1,0 +1,12 @@
+#page-user-preferences {
+    div[role=main] {
+        h2 {
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+        .card-body {
+            background-color: white;
+            border-radius: $normalBorderRadius;
+        }
+    }
+}

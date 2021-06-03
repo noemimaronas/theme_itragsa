@@ -1,0 +1,31 @@
+body#page-admin-tool-policy-view, body#page-admin-tool-policy-index {
+    margin-left: 0;
+    #page {
+        div[role=main] {
+            max-width: 1024px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: $white;
+        }
+    }
+    div#nav-drawer {
+        display: none;
+    }
+}
+
+body#page-auth-insvr_coupon-signup {
+    margin-left: 0;
+    #page {
+        div[role=main] {
+            max-width: 1024px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+    }
+    div#nav-drawer {
+        display: none;
+    }
+    div#notice {
+        text-align: center;
+    }
+}

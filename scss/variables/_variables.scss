@@ -1,0 +1,75 @@
+
+// Colores
+
+$primary:           #60BC00;
+$primaryLight:      #daebc7;
+$primaryLightest:   #f0f9e8;
+$secondary:         #820182;
+$secondaryLight:    #e9d8e9;
+$tertiary:          #002131;
+
+
+$white:             #fff;
+$gray-100:          #f8f9fa;
+$gray-200:          #e9ecef;
+$gray-300:          #dee2e6;
+$gray-400:          #ced4da;
+$gray-500:          #adb5bd;
+$gray-600:          #6c757d;
+$gray-700:          #495057;
+$gray-800:          #343a40;
+$gray-900:          #212529;
+$black:             #000;
+
+$error:             #d60303;
+$errorBg:           rgba(255, 0, 0, 0.02);
+$errorloginBg:      rgba(255, 0, 0, 0.15);
+$infoBg:            rgba(13, 143, 208, 0.05);
+
+$body:              #333;
+$bodyBg:            $gray-100;
+$navbar:            $gray-600;
+$navbarBg:          $white;
+$footer:            $primary;
+$footerBg:          $white;
+$drawer:            $gray-600;
+$drawerAct:         $primary;
+$drawerHov:         $primary;   
+$drawerBg:          $white;
+$drawerBgHov:       $gray-100;
+$aside:             transparent; 
+
+
+
+// table
+$tableHead:          $white;
+$tableBody:          $white;
+
+// Cursos menú navegación
+$menuCourse:            $white;
+$menuCourseText:        $gray-600;
+$menuCourseTextAct:     $primary;
+$menuCourseTextHover:   $gray-800;  
+
+$primaryOp:         rgba(0, 0, 0, .6);
+$homeprimaryOp:     rgba(0, 0, 0, 0.6);
+
+// Font Family
+
+$textfont:          'Montserrat', sans-serif;;
+$headingfont:       'Montserrat', sans-serif;
+
+// Transiciones
+
+$transition:        all .1s ease-in-out;
+$transitionSlow:    all .35s ease-in-out;
+
+// Shadows
+
+$secondaryShadow:   0 2px 12px rgba(0, 0, 0, .1);
+$asideShadow:       0 0 20px rgba(0, 0, 0, .1);
+$btnShadow:         0 4px 10px rgba(0, 0, 0, .1);
+
+$fullBorderRadius: 100px;
+$normalBorderRadius: 6px;
+$upnormalBorderRadius: 6px 6px 0 0;

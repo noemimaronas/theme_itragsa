@@ -1,0 +1,232 @@
+body#page-report-insvr_certs-index {
+    .report-content__btn, .topic-summary__btn, .topic__btn {
+        text-decoration: none;
+        color: $black;
+        text-transform: uppercase;
+        padding: 12px 16px;
+        border: 4px solid;
+        font-weight: 500;
+        display: block;
+    }
+    .report-separator {
+        height: 4px;
+        width: 100%;
+        background-color: $gray-300;
+    }
+      
+    .report-section-title {
+        padding-top: 4rem;
+        font-size: 2rem;
+        font-family: $headingfont;
+        font-weight: 300 !important;
+    }
+    .report-section-title:after {
+        content: url("/theme/inserverecoembes/pix/title_submarker.svg");
+        margin-top: 8px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    }
+
+    .report__button-scroll-top {
+        position: fixed;
+        bottom: 100px;
+        right: 100px;
+        background-color: $primary;
+        padding: 16px;
+        border-radius: 40px;
+        -webkit-transition: all 0.4s ease-in-out;
+        transition: all 0.4s ease-in-out;
+        opacity: 0;
+    }
+    .report__button-scroll-top--visible {
+        -webkit-transition: all 0.4s ease-in-out;
+        transition: all 0.4s ease-in-out;
+        opacity: 1;
+    }
+    .report__button-scroll-top img {
+        padding-bottom: 4px;
+    }
+    .report-content__page-title {
+        justify-self: flex-start;
+        font-weight: 600;
+        color: $black;
+    }
+      .report-content__btn {
+        display: none;
+        justify-self: flex-end;
+        color: black !important;
+    }
+      .report-content__course-title {
+        font-size: 2.5rem;
+        width: 80%;
+    }
+
+    .course-summary__progress-unit {
+        height: 24px;
+        width: auto;
+        background-color: $gray-300;
+        width: 100%;
+    }
+    .course-summary__progress-unit[data-state="1"] {
+      background-color: $primary;
+    }
+    .topic-summary__progress-unit {
+        height: 12px;
+        width: auto;
+        background-color: $gray-300;
+        width: 100%;
+    }
+    .topic-summary__progress-unit[data-state="1"] {
+        background-color: $primary;
+    }
+    .topic__progress-unit {
+        height: 24px;
+        width: auto;
+        background-color: $gray-300;
+        width: 100%;
+    }
+    .topic__progress-unit[data-state="1"] {
+        background-color: $primary;
+    }
+
+    .dataTables_wrapper .dataTables_length select {
+        background-color: transparent;
+        border: 1px solid $gray-300;
+        margin: 0 0.2em 0 0.5em!important;
+    }
+    .dataTables_wrapper .dataTables_filter input {
+        margin-left: 1em;
+        border: none;
+        border: 1px solid $gray-300;
+    }
+    .dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+        border: 1px solid $gray-300;
+        background: transparent!important;
+    }
+    .activity__score-text {
+        color: $gray-300;
+    }
+      .activity__score-result {
+        border-bottom: 2px solid $primary;
+        margin-left: 8px;
+    }
+    div#tabla_filter {
+        input {
+            border: 1px solid $gray-300;
+        }
+    }
+    .dataTables_scroll {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    table.dataTable {
+        margin: 0;
+        thead {
+            th {
+                border-bottom: 1px solid $white;
+            }
+        }
+        .display tbody tr.odd {
+            background-color: $white;
+        }
+    }
+    table {
+        thead {
+            tr {
+                th {
+                    background-color: $primaryLightest;
+                }
+                td {
+                    background-color: $primaryLightest;
+                }
+            }
+        }
+        tbody {
+            tr {
+                background-color: $white;
+            }
+        }
+    }
+    .dt-buttons {
+        margin-top: 20px;
+        button {
+            background: transparent;
+            background-color: $primary;
+            color: $white;
+            border: 0;
+            padding: 10px 20px;
+            transition: $transition;
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+    }
+    .dataTables_paginate {
+        float: right;
+        text-align: right;
+        padding-top: 0.25em;
+        .paginate_button {
+            background: transparent;
+            box-sizing: border-box;
+            display: inline-block;
+            min-width: 1.5em;
+            padding: 0.5em 1em;
+            margin-left: 2px;
+            text-align: center;
+            text-decoration: none !important;
+            cursor: pointer;
+            *cursor: hand;
+            color: $black !important;
+            border: 1px solid transparent;
+            &.current {
+                background: transparent;
+                color: $white !important;
+                border: 1px solid $primary;
+                background-color: $primary!important;
+                &:hover {
+                    background: transparent;
+                    color: $white !important;
+                    border: 1px solid $primary!important;
+                    background-color: $primary!important;
+                }
+            }
+            &.disabled {
+                cursor: default;
+                color: $black !important;
+                border: 1px solid transparent;
+                background: transparent;
+                box-shadow: none;
+                opacity: .5;
+                &:hover {
+                    cursor: default;
+                    color: $black !important;
+                    border: 1px solid transparent;
+                    background: transparent;
+                    box-shadow: none;
+                    opacity: .5;
+                }
+                &:active {
+                    cursor: default;
+                    color: $black !important;
+                    border: 1px solid transparent;
+                    background: transparent;
+                    box-shadow: none;
+                    opacity: .5;
+                }
+            }
+            &:hover {
+                background: transparent;
+                color: $black !important;
+                border: 1px solid transparent;
+                background-color: $gray-300;
+            }
+            &:active {
+                background: transparent;
+                color: $white !important;
+                border: 1px solid transparent;
+                background-color: $primary;
+            }
+        }
+    }
+}

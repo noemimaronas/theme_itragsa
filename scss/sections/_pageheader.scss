@@ -1,0 +1,32 @@
+body {
+    #page {
+        header#page-header {
+            .card {
+                border: 0;
+                .page-context-header {
+                    h1 {
+                        font-size: 20px;
+                        color: $gray-900;
+                        padding-left: 10px;
+                    }
+                }
+            }
+            @media screen and (max-width: 767px) {
+                padding: 10px;
+            }
+            div#page-navbar {
+                padding-left: 10px;
+            }
+        }
+    }
+}
+
+#page-user-editadvanced, #page-grade-report-overview-index, #page-message-index, #page-user-preferences, body.pagelayout-admin, body[id*='badges'], body#page-blog-external_blogs  {
+    header#page-header {
+        .card {
+            .page-context-header {
+                display: none;
+            }
+        }
+    }
+}

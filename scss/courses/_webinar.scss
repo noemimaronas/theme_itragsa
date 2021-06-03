@@ -1,0 +1,19 @@
+#page-course-view-topics {
+    #page-wrapper {
+        #page {
+            #page-content {
+                .card-body {
+                    div[role=main] {
+                        ul.topics{
+                            li {
+                                padding: 20px;
+                                background-color: $white;
+                                border: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

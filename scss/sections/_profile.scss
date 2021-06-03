@@ -1,0 +1,291 @@
+#page-user-profile {
+    #page {
+        #page-header {
+            .page-context-header {
+                display: none;
+            }
+        }
+        #page-content {
+            #region-main {
+                .card-body {
+                    h3 {
+                        margin-bottom: 40px;
+                        color: $secondary;
+                    }
+                    .data_profile {
+                        margin-bottom: 30px;
+                        margin-left: 0;
+                        margin-right: 0;
+                        .principal_profile {
+                            background-color: $white;
+                            padding: 20px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex-direction: column;
+                            .main_container {
+                                position: relative;
+                                .image_container {
+                                    width: 100px;
+                                    height: 100px;
+                                    border-radius: 50px;
+                                    overflow: hidden;
+                                    margin-bottom: 10px;
+                                    img {
+                                        width: 100%;
+                                        height: auto;
+                                    }
+                                }
+                                a.message {
+                                    width: 40px;
+                                    height: 40px;
+                                    background-color: $primary;
+                                    border-radius: 100px;
+                                    color: $white;
+                                    transition: $transition;
+                                    padding: 10px;
+                                    top: 0;
+                                    right: 0;
+                                    position: absolute;
+                                    i {
+                                        margin-right: 0;
+                                    }
+                                    &:hover {
+                                        background-color: $primaryLightest;
+                                        color: $primary;
+                                    }
+                                }
+                            }
+                            h5 {
+                                color: $secondary;
+                                margin-bottom: 30px;
+                            }
+                            span.editprofile {
+                                a {
+                                    padding: 8px 16px;
+                                    color: $white;
+                                    transition: $transition;
+                                    &:hover {
+                                        color: $primary;
+                                    }
+                                }
+                            }
+                            @media (max-width: 520px) {
+                                justify-content: flex-end;
+                            }
+                        }
+                        .general_data {
+                            padding: 20px;
+                            ul.columns_profile3 {
+                                column-count: 3;
+                                li {
+                                    break-inside: avoid;
+                                }
+                                @media(max-width: 800px) {
+                                    column-count: 2;
+                                }
+                                @media(max-width: 520px) {
+                                    column-count: 1;
+                                }
+                            }
+                        }
+                    }
+                    section.node_category.data_profile.row {
+                        background: $white;
+                    }
+                    .container-profile.container-fluid {
+                        h3 {
+                            color: $secondary;
+                            margin-bottom: 20px;
+                            font-size: 24px;
+                        }
+                        .course_data {
+                            padding: 20px;
+                        }
+                        .activity_data {
+                            padding: 20px;
+                        }
+                        .first-col-6 {
+                            padding-left: 0;
+                            padding-right: 6px;
+                            section {
+                                background: $white;
+                            }
+                            @media(max-width: 767px) {
+                                padding: 0;
+                            }
+                        }
+                        .second-col-6 {
+                            padding-right: 0;
+                            padding-left: 6px;
+                            section {
+                                background: $white;
+                            }
+                            @media(max-width: 767px) {
+                                padding: 0;
+                            }
+                        }
+                    }
+                    a[id*='vermas'], a[id*='vermenos'] {
+                        cursor: pointer;
+                        background-color: $primaryLightest;
+                        padding: 4px;
+                        margin-bottom: 20px;
+                        display: inline-block;
+                        color: $primary;
+                        transition: $transition;
+                        &:hover {
+                            color: $white;
+                            background-color: $primary;
+                        }
+                    }
+                    div[role=main] {
+                        .userprofile {
+                            .profile_tree {
+                                section {
+                                    background-color: $white;
+                                    h3 {
+                                        font-size: 24px;
+                                        font-weight: 600;
+                                    }
+                                }
+                                @media (max-width: 767px) {
+                                    column-count: 1;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// Editar perfil 
+
+#page-user-editadvanced {
+    #page-header {
+        .page-context-header {
+            display: none;
+        }
+    }
+}
+.path-course.pagelayout-mypublic {
+    section.standard-sections-course {
+            display: block;
+            h3 {
+                margin-bottom: 40px;
+                color: $body;
+                display: block;
+                text-align: center;
+                padding-top: 20px;
+            }
+            .principal_profile {
+                margin-bottom: 20px;
+                background-color: $white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                padding: 20px;
+                .main_container {
+                    position: relative;
+                    .image_container {
+                        width: 100px;
+                        height: 100px;
+                        border-radius: 50px;
+                        overflow: hidden;
+                        margin-bottom: 10px;
+                        img {
+                            width: 100%;
+                            height: auto;
+                        }
+                    }
+                    a.message {
+                        width: 40px;
+                        height: 40px;
+                        background-color: $primary;
+                        border-radius: 100px;
+                        color: $white;
+                        transition: $transition;
+                        padding: 10px;
+                        top: 0;
+                        right: -10px;
+                        position: absolute;
+                        text-align: center;
+                        i {
+                            margin-right: 0;
+                        }
+                        &:hover {
+                            background-color: $primaryLightest;
+                            color: $primary;
+                        }
+                    }
+                }
+            }
+            .course_profile {
+                background-color: $white;
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+            &.activity_profile {
+                background-color: $white;
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+            .columns_profile3 {
+                column-count: 3;
+                li {
+                    break-inside: avoid;
+                }
+                @media(max-width: 630px) {
+                    column-count: 2;
+                }
+                @media(max-width: 480px) {
+                    column-count: 1;
+                }
+            }
+            ul.columns_profile2 {
+                column-count: 2;
+                li {
+                    break-inside: avoid;
+                }
+                @media screen and (max-width: 520px) {
+                    column-count: 1;
+                }
+            }
+            section.node_category {
+                background-color: $white!important;
+            }
+        }
+        div[role=main] {
+            .userprofile {
+                .page-context-header {
+                    display: none;
+                }
+                .profile_tree {
+                    display: flex;
+                    .node_category {
+                        background-color: $white!important;
+                        padding: 20px;
+                        h3.lead {
+                            font-weight: 700;
+                            font-size: 24px;
+                            text-align: left;
+                            color: $primary;
+                        }
+                    }
+                    @media screen and (max-width: 767px) {
+                        column-count: 1;
+                        flex-wrap: wrap;
+                    }
+                }
+            }
+        }
+    .profile_tree {
+        flex-wrap: wrap;
+        section.node_category {
+            display: none !important;
+        }
+    }
+
+}

@@ -1,0 +1,423 @@
+[data-region="blocks-column"] {
+    margin-top: 80px;
+    height: 100%;
+    min-height: 100vh;
+    padding-top: 14px;
+    overflow: visible;
+    position: relative;
+    right: -15px;
+    top: -100px;
+    @media(max-width: 1199px) {
+        height: auto;
+        min-height: auto;
+        right: 0;
+        top: 0!important;
+        aside#block-region-side-pre {
+            section.block_completion_progress {
+                .card-text {
+                    .barContainer {
+                        .barRow {
+                            .progressBarCell {
+                                background-size: cover;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    aside#block-region-side-pre {
+        section {
+            &.block {
+                background: white;
+                margin-right: 20px;
+                .card-body {
+                    padding: 1.8rem 0;
+                    margin: 0;
+                    padding: 1.6rem 0;
+                    border-bottom: 0;
+                    .card-text {
+                        padding: 16px 0;
+                    }
+                    h5 {
+                        color: $secondary;
+                        font-size: 18px;
+                    }
+                    input {
+                        width: 100%;
+                        outline: 0;
+                        border: 1px solid $gray-400;
+                        &:focus {
+                            outline: 0;
+                        }
+                        &[type='checkbox'] {
+                            width: auto;
+                        }
+                    }
+                }
+            }
+            &.block_course_contents {
+                .section-item {
+                    a {
+                        padding: 10px;
+                        margin-bottom: 10px;
+                        border-left: 2px solid $primary;
+                        font-size: 16px;
+                        font-weight: 600;
+                        background-color: $primaryLightest;
+                        display: block;
+                        &:hover {
+                            background-color: $primary;
+                            color: $white;
+                            box-shadow: $secondaryShadow;
+                        }
+                    }
+                    &.selected {
+                        span {
+                            padding: 10px;
+                            margin-bottom: 10px;
+                            border-left: 2px solid $primary;
+                            font-size: 16px;
+                            font-weight: 600;
+                            background-color: $primary;
+                            color: $white;
+                            box-shadow: $secondaryShadow;
+                            display: block;
+                        }
+                    }
+                }
+            }
+            &.block_timeline {
+                .card-text {
+                    h4.h5 {
+                        a {
+                            color: $secondary;
+                            font-weight: 600;
+                        }
+                    }
+                    h5.h6 {
+                        color: $primary;
+                        margin-bottom: 10px;
+                        font-size: 14px!important;
+                        font-weight: 600;
+                        text-align: center;
+                        padding: 10px;
+                        background-color: $primaryLightest;
+                    }
+                    .list-group {
+                        h6.event-name {
+                            font-size: 14px;
+                        }
+                        .border-bottom {
+                            border-bottom: 1px dashed $primary!important;
+                        }
+                    }
+                    .list-group-item {
+                        margin-top: 0!important
+                    }
+                    a[href*='editsubmission'] {
+                        font-size: 14px;
+                        padding: 3px 4px;
+                        background-color: inherit;
+                        color: $primary;
+                        display: inline-block;
+                        width: auto;
+                        border-radius: 20px;
+                        transition: $transition;
+                        border: 1px solid;
+                        &:hover {
+                            background-color: $primaryLightest;
+                            color: $primary;
+                            transition: $transition;
+                        }
+                    }
+                }
+                .btn-outline-secondary {
+                    border-color: $primary;
+                    color: $primary;
+                    &:hover {
+                        background: $primary;
+                        color: $white;
+                    }
+                    &:focus {
+                        box-shadow: none;
+                        outline: 0;
+                    }
+                }
+                div[data-region='paging-control-container'] {
+                    margin-top: 20px;
+                }
+            }
+            &.block_people {
+                .content {
+                    .teachers {
+                        li {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            border-radius: $normalBorderRadius;
+                            box-shadow: $secondaryShadow;
+                            background-color: $white;
+                            padding: 10px;
+                            margin-bottom: 10px;
+                            .userpicture {
+                                width: 40px;
+                                height: 40px;
+                                margin-right: 0;
+                                margin-bottom: 10px;
+                            }
+                            .icons {
+                                min-height: auto;
+                                margin-left: 10px;
+                            }
+                        }
+                        .details {
+                            display: flex;
+                            align-items: center;
+                        }
+                    }
+                    .participants {
+                        a {
+                            padding: 10px;
+                            width: 100%;
+                            display: block;
+                            text-align: center;
+                            background: $primary;
+                            color: $white;
+                            border-radius: $normalBorderRadius;
+                            .icon {
+                                display: none;
+                            }
+                            &:hover {
+                                background-color: $white;
+                                color: $primary;
+                                box-shadow: $secondaryShadow;
+                            }
+                        }
+                    }
+                }
+            }
+            &.block_login {
+                input.btn-primary {
+                    margin-top: 20px;
+                }
+                .card-body {
+                    h5 {
+                        font-size: 24px!important;
+                    }
+                }
+                a[href*='signup'] {
+                    padding: 10px 20px;
+                    text-align: center;
+                    display: block;
+                    border: 1px solid $primary;
+                    border-radius: $normalBorderRadius;
+                    transition: $transition;
+                    margin-bottom: 20px;
+                    &:hover {
+                        color: $white;
+                        background-color: $primary;
+                    }
+                }
+                .card-text {
+                    margin-right: 0!important;
+                }
+            }
+            &.block_course_modulenavigation {
+                background-color: transparent;
+                .section {
+                    border: 0;
+                    .module-navigation-section-heading {
+                        background-color: $primary!important;
+                        transition: $transition;
+                        a {
+                            color: $white;
+                            &:hover {
+                                color: $primaryLightest;
+                            }
+                            &[data-toggle='collapse'] {
+                                &[aria-expanded="true"] {
+                                    &::after {
+                                        content: '▲';
+                                        font-size: 12px;
+                                        float: right;
+                                    }
+                                    &:hover {
+                                        &::after {
+                                            content: '▼';
+                                        }
+                                    }
+                                }
+                                &[aria-expanded="false"] {
+                                    &::after {
+                                        content: '▼';
+                                        font-size: 12px;
+                                        float: right;
+                                    }
+                                    &:hover {
+                                        &::after {
+                                            content: '▲';
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        &:hover {
+                            position: relative;
+                            left: 2px;
+                        }
+                    }
+                    .section-collapse {
+                        ul.activities {
+                            li {
+                                a {
+                                    background-color: $white;
+                                    &.active {
+                                        background-color: $primaryLightest;
+                                    }
+                                    &:hover {
+                                        background-color: $primaryLightest;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &.block_quickcourselist {
+                .quickcourseprogress {
+                    display: none;
+                }
+            }
+            &.block_quickfindlist {
+                .quickfindprogress {
+                    display: none;
+                }
+            }
+            &.block_online_users {
+                .content {
+                    .info {
+                        text-align: left;
+                        font-size: 14px;
+                    }
+                    ul.list {
+                        .user {
+                            a {
+                                font-size: 14px;
+                                img {
+                                    background: $gray-300;
+                                    border-radius: 50px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &.block_completion_progress {
+                .card-text {
+                    h3 {
+                        font-size: 1.25em;
+                        margin-bottom: 10px;
+                        color: $secondary;
+                        margin-top: 20px;
+                    }
+                }
+            }
+            &.block_search_forums {
+                .card-body {
+                    input {
+                        border: 0;
+                        border-bottom: 1px solid $gray-500;
+                        background: transparent;
+                        .input-group-append {
+                            button#searchform_button {
+                                padding: 6px 12px!important;
+                                margin-top: 10px!important;
+                                margin-left: 1px!important;
+                            }
+                        }
+                    }
+                }
+            }
+            &.block {
+                div.calendar_filters {
+                    ul {
+                        li {
+                            a {
+                                font-size: 12px;
+                                & > span {
+                                    background-color: transparent;
+                                    color: $secondary;
+                                    &.calendar_event_site {
+                                        i {
+                                            color: #d6f8cd;
+                                        }
+                                    }
+                                    &.calendar_event_category {
+                                        i {
+                                            color: #d8bfd8;
+                                        }
+                                    }
+                                    &.calendar_event_course {
+                                        i {
+                                            color: #ffd3bd;
+                                        }
+                                    }
+                                    &.calendar_event_group {
+                                        i {
+                                            color: #fee7ae;
+                                        }
+                                    }
+                                    &.calendar_event_user {
+                                        i {
+                                            color: #dce7ec;
+                                        }
+                                    }
+                                }
+                                & > i {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+                [id*=calendar-multi] {
+                    table.calendartable {
+                        h3 {
+                            font-size: 16px;
+                            a {
+                                color: $secondary;
+                                display: block;
+                                background-color: transparent;
+                                padding: 10px 10px 0 10px;
+                                border-radius: $normalBorderRadius;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: 1199px) {
+        top: 0;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        margin-top: 20px;
+        padding: 0 20px;
+        aside#block-region-side-pre {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            .block .content {
+                margin: 0!important;
+                margin-top: 10px!important;
+            }
+        }
+    }
+    @media (max-width: 1199px) {
+        aside#block-region-side-pre {
+            flex-direction: column;
+        }
+    }
+}

@@ -1,0 +1,373 @@
+nav.navbar {
+    background-color: $navbarBg;
+    color: $primary;
+    box-shadow: $secondaryShadow;
+    padding: 0 20px;
+    max-height: 64px;
+    height: 100%;
+    div[data-region=drawer-toggle] {
+        display: none!important;
+        button {
+            width: 40px;
+            height: 40px;
+            background-color: $gray-100;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 10px;
+        }
+        @media screen and (max-width: 500px) {
+            display: inline-block!important;
+        }
+    }
+    button {
+        background: transparent;
+        i {
+            color: $navbar;
+            transition: $transition;
+            &:hover {
+                color: $primary;
+            }
+        }
+        &:focus {
+            outline: 0;
+            box-shadow: none;
+        }
+    }
+    span {
+        &.logo {
+            img {
+                height: 40px;
+                max-height: 40px;
+                @media screen and (max-width: 500px) {
+                    height: 20px;
+                }
+                @media screen and (max-width: 400px) {
+                    display: none;
+                }
+            }
+        }
+    }
+    a {
+        color: $navbar;
+        transition: $transition;
+        &:hover {
+            color: $primary;
+        }
+        &.dropdown-toggle {
+            color: $navbar;
+            transition: $transition;
+            &:hover {
+                color: $primary;
+            }
+        }
+    }
+    .navbar-brand {
+        margin-right: 0;
+    }
+    .navbar-nav {
+        li.dropdown {
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            padding: 10px;
+            & > a {
+                color: $navbar;
+                &:hover {
+                    color: $primary;
+                }
+            }
+            .dropdown-menu {
+                margin-top: 16px;
+                border: none;
+                box-shadow: $secondaryShadow;
+                overflow: visible;
+                font-size: 14px;
+                &::before {
+                    border: 8px solid $white;
+                    content: '';
+                    position: absolute;
+                    top: -8px;
+                    right: 16px;
+                    transform: rotate(45deg);
+                    z-index: 2;
+                }
+            }
+            @media (max-width: 650px) {
+                display: none!important;
+            }
+        }
+        li.nav-item {
+            display: flex;
+            align-items: center;
+            .popover-region {
+                margin-right: auto;
+                &[data-region='popover-region-messages'] {
+                    margin-right: 0;
+                }
+            }
+            .popover-region-toggle {
+                overflow: visible;
+                width: auto;
+                &::after {
+                    display: none;
+                }
+            }
+            div#nav-notification-popover-container {
+                margin-right: 0;
+                .popover-region-toggle {
+                    &::before {
+                        border: 8px solid $white;
+                        content: '';
+                        position: absolute;
+                        top: 48px;
+                        right: 16px;
+                        transform: rotate(45deg);
+                    }
+                    i {
+                        &::before {
+                            display: none;
+                        }
+                        &::after {
+                            content: "\f0f3";
+                            font-family: 'Fontawesome';
+                            color: $navbar;
+                            font-size: 16px;
+                        }
+                        &:hover {
+                            background-color: $gray-100;
+                        }
+                    }
+                }
+            }
+            .popover-region-container {
+                top: 56px;
+                border: none;
+                box-shadow: $secondaryShadow;
+                border-radius: $normalBorderRadius;
+                .popover-region-header-container {
+                    height: 46px;
+                    line-height: 25px;
+                    padding: 10px 5px;
+                    border-bottom: 1px solid $gray-200;
+                    box-sizing: border-box;
+                }
+                a.see-all-link {
+                    .popover-region-footer-container {
+                        border-top: 1px solid $gray-200;
+                        .popover-region-seeall-text {
+                            color: $primary;
+                            transition: all .1s ease-in-out;
+                            &:hover {
+                                color: $primaryLight;
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+            }
+            div.usermenu {
+                padding: 10px;
+                .dropdown-toggle {
+                    .caret {
+                        display: none;
+                    }
+                    span.userbutton {
+                        .usertext {
+                            color: $navbar;
+                            font-size: 14px;
+                            font-weight: 600;
+                            margin-right: 8px;
+                        }
+                    }
+                    &::after {
+                        display: none;
+                    }
+                }
+                div.dropdown-menu {
+                    border: 0;
+                    box-shadow: $secondaryShadow;
+                    border-radius: $normalBorderRadius;
+                    overflow: visible;
+                    margin-top: 16px;
+                    font-size: 14px;
+                    &::before {
+                        border: 8px solid $white;
+                        content: '';
+                        position: absolute;
+                        top: -7px;
+                        right: 16px;
+                        transform: rotate(45deg);
+                    }
+                    a.dropdown-item {
+                        padding: .4rem 1.5rem;
+                        &[data-title="switchroleto,moodle"] {
+                            i {
+                                &::before {
+                                    display: inline-block!important;
+                                }
+                            }
+                        }
+                        &[data-title*="mymoodle"] {
+                            i {
+                                &::after {
+                                    content: "\f015";
+                                    font-family: 'Fontawesome';
+                                    color: $navbar;
+                                    font-size: 16px;
+                                    position: relative;
+                                    top: 2px;
+                                }
+                            }
+                        }
+                        &[data-title*="profile"] {
+                            i {
+                                &::after {
+                                    content: "\f007";
+                                    font-family: 'Fontawesome';
+                                    color: $navbar;
+                                    font-size: 16px;
+                                    position: relative;
+                                    top: 2px;
+                                }
+                            }
+                        }
+                        &[data-title*="grades"] {
+                            i {
+                                &::after {
+                                    content: "\f005";
+                                    font-family: 'Fontawesome';
+                                    color: $navbar;
+                                    font-size: 16px;
+                                    position: relative;
+                                    top: 2px;
+                                }
+                            }
+                        }
+                        &[data-title*="messages"] {
+                            i {
+                                &::after {
+                                    content: "\f0e0";
+                                    font-family: 'Fontawesome';
+                                    color: $navbar;
+                                    font-size: 16px;
+                                    position: relative;
+                                    top: 2px;
+                                }
+                            }
+                        }
+                        &[data-title*="preferences"] {
+                            i {
+                                &::after {
+                                    content: "\f1de";
+                                    font-family: 'Fontawesome';
+                                    color: $navbar;
+                                    font-size: 16px;
+                                    position: relative;
+                                    top: 2px;
+                                }
+                            }
+                        }
+                        &[data-title*="logout"] {
+                            color: $navbar;
+                            i {
+                                &::after {
+                                    content: "\f011";
+                                    font-family: 'Fontawesome';
+                                    color: $navbar;
+                                    font-size: 16px;
+                                    position: relative;
+                                    top: 2px;
+                                }
+                            }
+                            &:hover {
+                                color: $primary;
+                            }
+                        }
+                        i {
+                            &::before {
+                                display: none;
+                            }
+                        }
+                        &[data-title*='switchroleto'] {
+                            i {
+                                &::before {
+                                    display: inline-block;
+                                }
+                            }
+                        }
+                        &:active {
+                            background-color: $white;
+                            color: $primary;
+                        }
+                    }
+                    .dropdown-divider {
+                        display: none;
+                    }
+                }
+                &:hover {
+                    background-color: $gray-100;
+                }
+                @media screen and (max-width: 500px) {
+                    padding-left: 0;
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+    .count-container {
+        background: $primary;
+        width: 14px;
+        border-radius: $fullBorderRadius;
+        text-align: center;
+        right: 8px;
+    }
+    @media screen and (max-width: 500px) {
+        padding: 16px 10px;
+    }
+}
+
+.message-app {
+    ul.nav.nav-pills {
+        .nav-link.active {
+            background-color: transparent!important;
+            border-bottom: 2px solid $primary!important;
+            font-weight: 600;
+            color: $primary!important;
+            a {
+                color: $primary;
+            }
+        }
+    }
+    .list-group {
+        h6 {
+            font-size: 16px;
+        }
+    }
+}
+
+.notloggedin {
+    .usermenu {
+        .login {
+            font-size: 0;
+            a {
+                font-size: 16px!important;
+                background-color: $primary;
+                border-radius: $normalBorderRadius;
+                border: 2px solid $primary;
+                color: $white;
+                padding: 10px 20px;
+                &:hover {
+                    border: 2px solid $primary;
+                    color: $primary;
+                    background-color: $white;
+                }
+            }
+        }
+    }
+}

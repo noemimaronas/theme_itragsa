@@ -1,0 +1,522 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template theme_boost/columns2
+
+    Admin time setting template.
+
+    Boost 2 column layout template.
+
+    Context variables required for this template:
+    * sitename - The name of the site
+    * output - The core renderer for the page
+    * bodyattributes - attributes for the body tag as a string of html attributes
+    * sidepreblocks - HTML for the blocks
+    * hasblocks - true if there are blocks on this page
+    * navdraweropen - true if the nav drawer should be open on page load
+    * regionmainsettingsmenu - HTML for the region main settings menu
+    * hasregionmainsettingsmenu - There is a region main settings menu on this page.
+
+    Example context (json):
+    {
+        "sitename": "Moodle",
+        "output": {
+            "doctype": "<!DOCTYPE html>",
+            "page_title": "Test page",
+            "favicon": "favicon.ico",
+            "main_content": "<h1>Headings make html validators happier</h1>"
+         },
+        "bodyattributes":"",
+        "sidepreblocks": "<h2>Blocks html goes here</h2>",
+        "hasblocks":true,
+        "navdraweropen":true,
+        "regionmainsettingsmenu": "",
+        "hasregionmainsettingsmenu": false
+    }
+}}
+{{> $themereference/head }}
+
+<body {{{ bodyattributes }}}>
+
+<div id="page-wrapper">
+
+    {{{ output.standard_top_of_body_html }}}
+
+    {{>$themereference/navbar}}
+    {{> $themereference/nav-drawer }}
+
+
+    <div id="page" class="container-fluid">
+        {{{ output.full_header }}}
+
+        <div id="page-content" class="row">
+            <div id="region-main-box" class="col-12">
+                {{#hasregionmainsettingsmenu}}
+                <div id="region-main-settings-menu" class="d-print-none {{#hasblocks}}has-blocks{{/hasblocks}}">
+                    <div> {{{ output.region_main_settings_menu }}} </div>
+                </div>
+                {{/hasregionmainsettingsmenu}}
+                <section id="region-main" {{#hasblocks}}class="has-blocks mb-3"{{/hasblocks}}>
+                    <div class="card">
+                        <div class="card-body">
+                            {{#hasregionmainsettingsmenu}}
+                                <div class="region_main_settings_menu_proxy"></div>
+                            {{/hasregionmainsettingsmenu}}
+                            {{{ output.course_content_header }}}
+                            <section class="standard-sections-course node_category data_profile">
+
+                            {{! PERFIL CURSO__________________________________}}
+                            {{#hasviewprofile_course}}
+                            <section class="standard-sections-course node_category data_profile">
+
+                                <h3>{{#str}}standard_userdata, theme_itragsa{{/str}}</h3>
+                                <div class="principal_profile container-fluid">
+                                    <div class="main_container">
+                                        <div class="image_container">
+                                            <img src="{{image_url}}" class="img_profile">
+                                        </div>
+                                        <a href="/message/index.php?id={{useridprofile}}" class="message"><i class="icon fa fa-comment fa-fw "></i></a>
+                                    </div>
+                                    <h5>{{userlongname}}</h5>
+                                    <a href="/user/profile.php?id={{useridprofile}}" class="btn btn-secondary">{{#str}}standard_profile, theme_itragsa{{/str}}</a>
+                                </div>
+                                {{/hasviewprofile_course}}
+
+                                {{#hasviewcapability_course}}
+                                <div class="container-fluid course_profile">
+                                    <h4 class="without-border">{{#str}}standard_status, theme_itragsa{{/str}}</h4>
+                                    <ul class="columns_profile3">
+                                        <li class="contentnode">
+                                            <dl>
+                                                <dt>{{#str}}standard_coursename, theme_itragsa{{/str}}</dt>
+                                                <dd><a href={{courseurl}}> {{coursename}} </a></dd>
+                                            </dl>
+                                        </li>
+                                        <li class="contentnode">
+                                            <dl>
+                                                <dt>{{#str}}standard_courseshortname, theme_itragsa{{/str}}</dt>
+                                                <dd>{{courseshortname}}</dd>
+                                            </dl>
+                                        </li>
+                                        <li class="contentnode">
+                                            <dl>
+                                                <dt>{{#str}}standard_category, theme_itragsa{{/str}}</dt>
+                                                <dd>{{category}}</dd>
+                                            </dl>
+                                        </li>
+                                        <li class="contentnode">
+                                            <dl>
+                                                <dt>{{#str}}standard_group, theme_itragsa{{/str}}</dt>
+                                                <dd>{{#groups}}{{.}}<br>{{/groups}}</dd>
+                                            </dl>
+                                        </li>
+                                        <li class="contentnode">
+                                            <dl>
+                                                <dt>{{#str}}standard_userrole, theme_itragsa{{/str}}</dt>
+                                                <dd>{{userrole}}</dd>
+                                            </dl>
+                                        </li>
+                                        <li class="contentnode">
+                                            <dl>
+                                                <dt>{{#str}}standard_courseteacher, theme_itragsa{{/str}}</dt>
+                                                {{#hascourseteacher}}
+                                                    <dd>{{#courseteacher}}<a href="{{{url}}}">{{name}}</a><br>{{/courseteacher}}</dd>
+                                                {{/hascourseteacher}}
+                                                {{^hascourseteacher}}
+                                                    <dd>-</dd>
+                                                {{/hascourseteacher}}
+                                            </dl>
+                                        </li>
+                                        
+                                        <li class="contentnode">
+                                            <dl>
+                                                <dt>{{#str}}standard_shortdescription, theme_itragsa{{/str}}</dt>
+                                                <dd>{{{shortdescription}}}</dd>
+                                            </dl>
+                                        </li>
+                                        {{#grades}}
+                                        <li class="contentnode">
+                                            <dl>
+                                                <dt>{{#str}}standard_grades, theme_itragsa{{/str}}</dt>
+                                                <dd>{{.}}</dd>
+                                            </dl>
+                                        </li>
+                                        {{/grades}}
+                                        <li class="contentnode">
+                                            <dl>
+                                                <dt>{{#str}}standard_progress, theme_itragsa{{/str}}</dt>
+                                                <dd>{{progress}}</dd>
+                                            </dl>
+                                        </li>
+                                        <li class="contentnode">
+                                            <dl>
+                                                <dt>{{#str}}standard_section, theme_itragsa{{/str}}</dt>
+                                                <dd>{{#section}} <a href="{{{url}}}">{{name}}</a> <br> {{/section}}</dd>
+                                            </dl>
+                                        </li>
+                                        <li class="contentnode">
+                                            <dl>
+                                                <dt>{{#str}}standard_modules, theme_itragsa{{/str}}</dt>
+                                                <dd>{{#modules}}{{name}} ({{cant}})<br>{{/modules}}</dd>
+                                           </dl>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </section>
+                             <section class="standard-sections-course node_category data_profile activity_profile container_fluid">
+                                <h4 class="without-border">{{#str}}standard_courseactivity, theme_itragsa{{/str}}</h4>
+                                <ul class="columns_profile2">
+                                    <li class="contentnode">
+                                        <dl>
+                                            <dt>{{#str}}standard_enroldate, theme_itragsa{{/str}}</dt>
+                                            <dd>
+                                                {{fechamatriculacion}}
+                                            </dd>
+                                        </dl>
+                                    </li>
+                                    <li class="contentnode">
+                                        <dl>
+                                            <dt>{{#str}}standard_superacion, theme_itragsa{{/str}}</dt>
+                                            <dd>
+                                                {{fechacursosuperado}}
+                                            </dd>
+                                        </dl>
+                                    </li>
+                                    <li class="contentnode">
+                                        <dl>
+                                            <dt>{{#str}}standard_finalizacion, theme_itragsa{{/str}}</dt>
+                                            <dd>
+                                                {{fechacursocompletado}}
+                                            </dd>
+                                        </dl>
+                                    </li>
+                                    <li class="contentnode">
+                                        <dl>
+                                            <dt>{{#str}}lastaccess, core{{/str}}</dt>
+                                            <dd>
+                                                {{fechaultimoacceso_course}}
+                                            </dd>
+                                        </dl>
+                                    </li>
+                                </ul>
+                            </section>
+                            {{/hasviewcapability_course}}
+
+
+                            {{! PERFIL SITIO__________________________________}}
+                            {{#is_pageprofileview}}
+                            <h3>{{#str}}mypublic_userdata, theme_itragsa{{/str}}</h3>
+                            <section class="node_category data_profile row">
+                                <div class="principal_profile col-12 col-md-4 col-lg-3">
+                                    <div class="main_container">
+                                        <div class="image_container">
+                                            <img src="{{image_url}}" class="img_profile">
+                                        </div>
+                                        <a href="/message/index.php?id={{useridprofile}}" class="message"><i class="icon fa fa-comment fa-fw "></i></a>
+                                    </div>
+                                    <h5>{{firstname}} {{lastname}}</h5>
+                                    {{#hasupdatecapability}}
+                                        <span class="editprofile">
+                                            <a href="/user/editadvanced.php?id={{useridprofile}}" class="btn-primary">{{#str}}editmyprofile, core{{/str}}</a>
+                                        </span>
+                                    {{/hasupdatecapability}}
+                                    {{#hasupdateusercapability}}
+                                        <span class="editprofile">
+                                            <a href="/user/edit.php?id={{useridprofile}}" class="btn-primary">{{#str}}editmyprofile, core{{/str}}</a>
+                                        </span>
+                                    {{/hasupdateusercapability}}
+                                </div>
+                                {{#hasviewcapability}}
+
+                                <div class="container-fluid general_data col-12 col-md-8 col-lg-9">
+                                    <!--<h4>{{#str}}mypublic_usergeneraldata, theme_itragsa{{/str}}</h4>-->
+                                    <ul class="columns_profile3">
+                                        <li class="contentnode">
+                                            <dl>
+                                                <dt>{{#str}}mypublic_userid, theme_itragsa{{/str}}</dt>
+                                                <dd>{{useridprofile}}</dd>
+                                            </dl>
+                                        </li>
+                                        <li class="contentnode">
+                                            <dl>
+                                                <dt>{{#str}}username, core{{/str}}</dt>
+                                                <dd>{{username}}</dd>
+                                            </dl>
+                                        </li>
+                                        <li class="contentnode">
+                                            <dl>
+                                                <dt>{{#str}}firstname, core{{/str}}</dt>
+                                                <dd>{{firstname}}</dd>
+                                            </dl>
+                                        </li>
+                                        <li class="contentnode">
+                                            <dl>
+                                                <dt>{{#str}}lastname, core{{/str}}</dt>
+                                                <dd>{{lastname}}</dd>
+                                            </dl>
+                                        </li>
+                                        <li class="contentnode">
+                                            <dl>
+                                                <dt>{{#str}}email, core{{/str}}</dt>
+                                                <dd>{{email}}</dd>
+                                            </dl>
+                                        </li>
+                                        <li class="contentnode">
+                                            <dl>
+                                                <dt>{{#str}}language, core{{/str}}</dt>
+                                                <dd>{{idioma}}</dd>
+                                            </dl>
+                                        </li>
+                                        <li class="contentnode">
+                                            <dl>
+                                                <dt>{{#str}}mypublic_nationality, theme_itragsa{{/str}}</dt>
+                                                <dd>{{nacionalidad}}</dd>
+                                            </dl>
+                                        </li>
+                                        <li class="contentnode">
+                                            <dl>
+                                                <dt>{{#str}}city, core{{/str}}</dt>
+                                                <dd>{{ciudad}}</dd>
+                                            </dl>
+                                        </li>
+                                        <li class="contentnode">
+                                            <dl>
+                                                <dt>{{#str}}mypublic_zonahoraria, theme_itragsa{{/str}}</dt>
+                                                <dd>{{zonahoraria}}</dd>
+                                            </dl>
+                                        </li>
+                                        {{#automaticgeneral}}
+                                        <li class="contentnode">
+                                            <dl>
+                                                <dt>{{{str_name}}}</dt>
+                                                <dd>{{{value}}}</dd>
+                                            </dl>
+                                        </li>
+                                        {{/automaticgeneral}}
+                                        <li class="contentnode">
+                                            <dl>
+                                                <dt>{{#str}}mypublic_observations, theme_itragsa{{/str}}</dt>
+                                                <dd>{{{observaciones}}}</dd>
+                                            </dl>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </section>
+                            
+                                <!-- Estado de los cursos -->
+                            <div class="container-fluid container-profile">
+                                <div class="row">
+                                    <div class="col-12 col-md-6 first-col-6">
+                                        
+                                        <section class="node_category data_profile course_data">
+                                            <h3>{{#str}}coursedetails, core{{/str}}</h3>
+                                            <ul>
+                                                <li class="contentnode">
+                                                    <dl id='finalizados'>
+                                                        <dt>{{#str}}mypublic_fi_finalizados, theme_itragsa{{/str}} ({{numfinish}})</dt>
+                                                        {{#cursosfinalizados}}
+                                                        <dd>
+                                                            <a href="{{{url}}}">{{nombre}}</a>
+                                                        </dd>
+                                                        {{/cursosfinalizados}}
+                                                    </dl>
+                                                    <a id='vermasfinalizados' onclick='vermas(finalizados)'> {{#str}}mypublic_vermas, theme_itragsa{{/str}} </a>
+                                                </li>
+                                                <li class="contentnode">
+                                                    <dl id='proceso'>
+                                                        <dt>{{#str}}mypublic_fi_proceso, theme_itragsa{{/str}} ({{numprocess}})</dt>
+                                                        {{#cursosenproceso}}
+                                                        <dd>
+                                                            <a href="{{{url}}}">{{nombre}}</a>
+                                                        </dd>
+                                                        {{/cursosenproceso}}
+                                                    </dl>
+                                                    <a id='vermasproceso' onclick="vermas('proceso')"> {{#str}}mypublic_vermas, theme_itragsa{{/str}} </a>
+                                                </li>
+                                                <li class="contentnode">
+                                                    <dl id='solicitados'>
+                                                        <dt>{{#str}}mypublic_fi_solicitados, theme_itragsa{{/str}} ({{numsolicit}})</dt>
+                                                        {{#cursossolicitados}}
+                                                        <dd>
+                                                            <a href="{{{url}}}">{{nombre}}</a>
+                                                        </dd>
+                                                        {{/cursossolicitados}}
+                                                    </dl>
+                                                    <a id='vermassolicitados' onclick="vermas('solicitados')"> {{#str}}mypublic_vermas, theme_itragsa{{/str}} </a>
+                                                </li>
+                                            </ul>
+                                        </section>
+                                        
+                                        
+                                    </div>
+                                    
+                                    <div class="col-12 col-md-6 second-col-6">
+                                        <section  class="node_category data_profile activity_data">
+                                            <h3>{{#str}}loginactivity, core{{/str}}</h3>
+                                            <ul>
+                                                <li class="contentnode">
+                                                    <dl>
+                                                        <dt>{{#str}}mypublic_aa_creacion, theme_itragsa{{/str}}</dt>
+                                                        <dd>
+                                                            {{{fechacreacion}}}
+                                                        </dd>
+                                                    </dl>
+                                                </li>
+                                                <li class="contentnode">
+                                                    <dl>
+                                                        <dt>{{#str}}mypublic_aa_suspension, theme_itragsa{{/str}}</dt>
+                                                        <dd>
+                                                            {{{fechasuspension}}}
+                                                        </dd>
+                                                    </dl>
+                                                </li>
+                                                <li class="contentnode">
+                                                    <dl>
+                                                        <dt>{{#str}}firstsiteaccess, core{{/str}}</dt>
+                                                        <dd>
+                                                            {{{fechaprimeracceso}}}
+                                                        </dd>
+                                                    </dl>
+                                                </li>
+                                                <li class="contentnode">
+                                                    <dl>
+                                                        <dt>{{#str}}lastsiteaccess, core{{/str}}</dt>
+                                                        <dd>
+                                                            {{{fechaultimoacceso}}}
+                                                        </dd>
+                                                    </dl>
+                                                </li>
+                                                <li class="contentnode">
+                                                    <dl>
+                                                        <dt>{{#str}}lastip, core{{/str}}</dt>
+                                                        <dd class="last-ip">
+                                                            {{{ultimaip}}}
+                                                        </dd>
+                                                    </dl>
+                                                </li>
+                                            </ul>
+                                        </section>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                            {{/hasviewcapability}} 
+                            {{/is_pageprofileview}}
+                        
+
+                            {{{ output.main_content }}}
+                            {{{ output.activity_navigation }}}
+                            {{{ output.course_content_footer }}}
+                        </div>
+                    </div>
+                </section>
+                {{#hasblocks}}
+                <section data-region="blocks-column" class="d-print-none">
+                    {{{ sidepreblocks }}}
+                </section>
+                {{/hasblocks}}
+            </div>
+        </div>
+    </div>
+    {{{ output.standard_after_main_region_html }}}
+</div>
+
+{{> $themereference/footer }}
+
+</body>
+</html>
+{{#js}}
+require(['theme_boost/loader']);
+require(['theme_boost/drawer'], function(mod) {
+    mod.init();
+});
+{{/js}}
+
+{{! Avusio de cookies}}
+{{#js}}
+    window.addEventListener("load", function(){
+        if (!window.cookieconsent) {
+            return;
+        }
+        window.cookieconsent.initialise({
+            "palette": {
+                "popup": {
+                    "background": "#373a3c",
+                    "text": "#fff"
+                },
+                "button": {
+                    "background": "#00acdf",
+                    "text": "#fff"
+                }
+            },
+            "content": {
+                "message": "This website uses cookies to ensure you get the best experience on our website.",
+                "dismiss": "Got it!",
+                "link": 'Learn more',
+                "href": "{{config.wwwroot}}/theme/itragsa/sitepolicy.php"
+            }
+        });
+    });
+{{/js}}
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script>
+    $(function() {
+        // Si el número de cursos supera a 5, ocultamos a partir del 5º. Si no, ocultamos el botón
+        if($("#proceso dd").length > 5) {
+            for (i = 5; i <= $("#proceso dd").length; i++) {
+                $("#proceso dd:nth-of-type(" + i +")").hide();
+            }
+        } else {
+            $('#vermasproceso').hide();
+        }
+
+        if($("#solicitados dd").length > 5) {
+            for (i = 5; i <= $("#solicitados dd").length; i++) {
+                $("#solicitados dd:nth-of-type(" + i +")").hide();
+            }
+        } else {
+            $('#vermassolicitados').hide();
+        }
+
+        if($("#finalizados dd").length > 5) {
+           for (i = 5; i <= $("#finalizados dd").length; i++) {
+                $("#finalizados dd:nth-of-type(" + i +")").hide();
+            }
+        } else {
+            $('#vermasfinalizados').hide();
+        }
+    });
+
+    function vermas(tipo) {
+        // Mostramos-ocultamos campos en función del botón que se pulse
+        if($('#vermas'+tipo).text() === '{{#str}}mypublic_vermenos, theme_itragsa{{/str}}') {
+            for (i = 5; i <= $("#proceso dd").length; i++) {
+                $("#proceso dd:nth-of-type(" + i +")").hide();
+            }
+
+            $('#vermas'+tipo).text('{{#str}}mypublic_vermas, theme_itragsa{{/str}}');
+        } else {
+            for (i = 5; i <= $("#" + tipo + " dd").length; i++) {
+                $("#"+ tipo + " dd:nth-of-type(" + i +")").show();
+            }
+
+            $('#vermas'+tipo).text('{{#str}}mypublic_vermenos, theme_itragsa{{/str}}');
+        }
+    }
+    $('#page-user-profile div[role=main] .userprofile .description').remove();
+</script>
+

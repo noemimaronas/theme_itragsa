@@ -1,0 +1,116 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template $themereference/flat_navigation
+
+    Display the flat navigation for the itragsa theme
+
+    Classes required for JS:
+    * none
+
+    Data attributes required for JS:
+    * none
+
+    Context variables required for this template:
+    * flatnavigation - array of flat_navigation_nodes
+      * showdivider - boolean
+      * action - string
+      * isactive - boolean
+      * get_indent - integer
+      * is_section - boolean
+      * text - HTML
+
+    Example context (json):
+    {
+        "flatnavigation" : [
+            {
+                "showdivider": false,
+                "action": "#",
+                "isactive": true,
+                "get_indent": 1,
+                "is_section": false,
+                "text": "First"
+            },{
+                "showdivider": true,
+                "action": "#",
+                "isactive": false,
+                "get_indent": 0,
+                "is_section": true,
+                "text": "Last &amp; Second"
+            }
+        ]
+    }
+}}
+<nav class="list-group">
+{{# flatnavigation }}
+    {{#showdivider}}
+</nav>
+<nav class="list-group">
+    {{/showdivider}}
+    {{#action}}
+    <a class="list-group-item list-group-item-action {{#isactive}}active{{/isactive}}" href="{{{action}}}" data-key="{{key}}" data-isexpandable="{{isexpandable}}" data-indent="{{get_indent}}" data-showdivider="{{showdivider}}" data-type="{{type}}" data-nodetype="{{nodetype}}" data-collapse="{{collapse}}" data-forceopen="{{forceopen}}" data-isactive="{{isactive}}" data-hidden="{{hidden}}" data-preceedwithhr="{{preceedwithhr}}" {{#parent.key}}data-parent-key="{{.}}"{{/parent.key}}>
+        <div class="m-l-{{get_indent}}">
+            <div class="media">
+            {{#icon.pix}}
+                <span class="media-left">
+                    {{#pix}}{{{icon.pix}}}, {{{icon.component}}}, {{{icon.alt}}}{{/pix}}
+                </span>
+            {{/icon.pix}}
+                <span class="media-body {{#isactive}}font-weight-bold{{/isactive}}">{{{text}}}</span>
+            </div>
+        </div>
+    </a>
+    {{/action}}
+    {{^action}}
+    <div class="list-group-item" data-key="{{key}}" data-isexpandable="{{isexpandable}}" data-indent="{{get_indent}}" data-showdivider="{{showdivider}}" data-type="{{type}}" data-nodetype="{{nodetype}}" data-collapse="{{collapse}}" data-forceopen="{{forceopen}}" data-isactive="{{isactive}}" data-hidden="{{hidden}}" data-preceedwithhr="{{preceedwithhr}}" {{#parent.key}}data-parent-key="{{.}}"{{/parent.key}}>
+        <div class="m-l-{{get_indent}}">
+            <div class="media">
+            {{#icon.pix}}
+                <span class="media-left">
+                    {{#pix}}{{{icon.pix}}}, {{{icon.component}}}, {{{icon.alt}}}{{/pix}}
+                </span>
+            {{/icon.pix}}
+                <span class="media-body">{{{text}}}</span>
+            </div>
+        </div>
+    </div>
+    {{/action}}
+{{/ flatnavigation }}
+    <a class="list-group-item list-group-item-action" href="/user/profile.php?id={{userid}}" data-key="profile">
+        <div class="m-l-0">
+            <div class="media">
+                <span class="media-left">
+                    <i class="icon fa-profile"></i>
+                </span>
+                <span class="media-body">{{#str}}profile, core{{/str}}</span>
+            </div>
+        </div>
+    </a>
+    <a class="list-group-item list-group-item-action" href="/grade/report/overview/index.php" data-key="maingrades">
+        <div class="m-l-0">
+            <div class="media">
+                <span class="media-left">
+                    <i class="icon fa fa-certificate fa-fw"></i>
+                </span>
+                <span class="media-body">{{#str}}grades, core{{/str}}</span>
+            </div>
+        </div>
+    </a>
+    <div data-region="drawer-toggle" class="d-inline-block">
+        <button aria-expanded="{{#navdraweropen}}true{{/navdraweropen}}{{^navdraweropen}}false{{/navdraweropen}}" aria-controls="nav-drawer" type="button" class="btn nav-link float-sm-left toggle-drawer" data-action="toggle-drawer" data-side="left" data-preference="drawer-open-nav">{{#pix}}i/menubars{{/pix}}<span class="sr-only">{{#str}}sidepanel, core{{/str}}</span></button>
+    </div>
+</nav>

@@ -1,0 +1,283 @@
+// Moodle 3.8
+#nav-drawer[aria-hidden=true] .list-group-item {
+    display: flex;
+}
+div[data-region=drawer] {
+    top: 0;
+    margin-top: 64px;
+}
+div#nav-drawer {
+    padding: 0;
+    background-color: $drawerBg;
+    div[data-region=drawer-toggle] {
+        position: absolute;
+        bottom: 0;
+        button {
+            width: 79px;
+            margin-bottom: 40px;
+            &:focus {
+                outline: 0;
+                box-shadow: none;
+            }
+            &[aria-expanded=false] {
+                .fa-bars:before {
+                    content: "\f054";
+                }
+            }
+            &[aria-expanded=true] {
+                .fa-bars:before {
+                    content: "\f053";
+                }
+            }
+        }
+        @media screen and (max-width: 500px) {
+            display: none!important;
+        }
+    }
+    a.list-group-item {
+        background-color: transparent;
+        border: none;
+        padding: .75rem 1.30rem;
+        .media {
+            align-items: center;
+            .media-left {
+                margin: 0 auto;
+                padding: 10px;
+                padding-left: 0;
+                .icon {
+                    border-radius: $fullBorderRadius;
+                    min-width: 40px!important;
+                    min-height: 40px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    transition: $transition;
+                    &.fa-tachometer {
+                        &::before {
+                            content: "\f015";
+                            font-family: 'Fontawesome';
+                            font-size: 20px;
+                            color: $drawer;
+                        }
+                    }
+                    &.fa-home {
+                        &::before {
+                            content: "\f19d";
+                            font-family: 'Fontawesome';
+                            font-size: 20px;
+                            color: $drawer;
+                        }
+                    }
+                    &.fa-wrench {
+                        &::before {
+                            content: "\f1de";
+                            font-family: 'Fontawesome';
+                            font-size: 20px;
+                            color: $drawer;
+                        }
+                    }
+                    &.fa-profile {
+                        &::before {
+                            content: "\f007";
+                            font-family: 'Fontawesome';
+                            font-size: 20px;
+                            color: $drawer;
+                            font-style: initial;
+                        }
+                    }
+                    &.fa-certificate, &.fa-paint-brush {
+                        &::before {
+                            color: $drawer;
+                        }
+                    }
+                }
+            }
+            .media-body {
+                padding: 10px;
+                padding-right: 0;
+                font-size: 14px;
+                color: $drawer;
+            }
+        }
+        &.active {
+            &[data-key="myhome"] {
+                color: $drawerAct;
+                .media-body {
+                    color: $drawerAct;
+                }
+            }
+            &[data-key="home"] {
+                color: $drawerAct;
+                .media-body {
+                    color: $drawerAct;
+                }
+            }
+            &[data-key="sitesettings"] {
+                color: $drawerAct;
+                .media-body {
+                    color: $drawerAct;
+                }
+            }
+            &[data-key="contentbank"] {
+                color: $drawerAct;
+                .media-body {
+                    color: $drawerAct;
+                }
+            }
+            &[data-key="maingrades"] {
+                color: $drawerAct;
+                .media-body {
+                    color: $drawerAct;
+                }
+            }
+            &[data-key="profile"] {
+                color: $drawerAct;
+                .media-body {
+                    color: $drawerAct;
+                }
+            }
+            .media {
+                .media-left {
+                    .icon {
+                        color: $drawerAct;
+                        &::before {
+                            color: $drawerAct;
+                        }
+                    }
+                }
+                .media-body {
+                    color: $drawerAct;
+                }
+            }
+        }
+        &[data-key="calendar"] {
+            display: none;
+        }
+        &[data-key="privatefiles"] {
+            display: none;
+        }
+        &[data-key="mycourses"] {
+            display: none;
+        }
+        &[data-parent-key="mycourses"] {
+            display: none;
+        }
+        // Eliminando enlaces en cursos
+        &[data-key="participants"] {
+            display: none;
+        }
+        &[data-key="badgesview"] {
+            display: none;
+        }
+        &[data-key="competencies"] {
+            display: none;
+        }
+        &[data-key="grades"] {
+            display: none;
+        }
+        &[href*="course/view.php?id="] {
+            display: none;
+        }
+        &[href*="addblock"] {
+            display: block;
+        }
+        &:hover {
+            .media {
+                .media-left {
+                    .icon {
+                        background-color: $drawerBgHov;
+                    }
+                }
+            }
+        }
+    }
+    div.list-group-item {
+        &[data-key="mycourses"] {
+            display: none;
+        }
+    }
+    &.closed {
+        width: 80px;
+        left: 0px;
+        overflow: visible;
+        a.list-group-item {
+            background-color: $drawerBg;
+            &[data-key="maingrades"] {
+                display: flex;
+                justify-content: center;
+            }
+            .media {
+                .media-left {
+                    margin: 0 auto;
+                    padding: 10px 0;
+                    .icon {
+                        margin-right: 0;
+                    }
+                }
+                .media-body {
+                    display: none;
+                }
+            }
+            &:hover {
+                .media {
+                    .media-body {
+                        display: flex;
+                        align-items: center;
+                        position: absolute;
+                        left: 79px;
+                        width: 200px;
+                        height: 84px;
+                        border-left: 0;
+                        top: 0;
+                        background-color: $drawerBg;
+                        color: $drawer;
+                    }
+                }
+            }
+            &.active {
+                &[data-key="myhome"] {
+                    .media-body {
+                        color: $drawerAct;
+                    }
+                }
+                &[data-key="home"] {
+                    .media-body {
+                        color: $drawerAct;
+                    }
+                }
+                &[data-key="sitesettings"] {
+                    .media-body {
+                        color: $drawerAct;
+                    }
+                }
+                &[data-key="maingrades"] {
+                    color: $drawerAct;
+                    .media-body {
+                        color: $drawerAct;
+                    }
+                }
+                &[data-key="contentbank"] {
+                    color: $drawerAct;
+                    .media-body {
+                        color: $drawerAct;
+                    }
+                }
+                &[data-key="profile"] {
+                    .media-body {
+                        color: $drawerAct;
+                    }
+                }
+                .media {
+                    .media-left {
+                        .icon {
+                            color: $drawerAct;
+                        }
+                    }
+                }
+            }
+        }
+        @media screen and (max-width: 500px) {
+            left: -80px;
+        }
+    }
+}

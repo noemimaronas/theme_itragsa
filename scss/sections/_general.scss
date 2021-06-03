@@ -1,0 +1,1230 @@
+body {
+    background-color: $bodyBg;
+    margin-left: 80px;
+    color: $body;
+    font-family: $textfont;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1.5em;
+    transition: all .2s ease-in;
+    .card {
+        border: none;
+    }
+    &.drawer-open-left {
+        margin-left: 285px;
+        @media screen and (max-width: 767px) {
+            overflow: visible;
+        }
+    }
+    @media screen and (max-width: 500px) {
+        margin-left: 0;
+        &.drawer-open-left {
+            margin-left: 0;
+        }
+    }
+    &.notloggedin {
+        margin-left: 0;
+        #page-header {
+            display: none;
+        }
+        div#nav-drawer {
+            display: none;
+        }
+    }
+}
+#page-wrapper {
+    background-color: $gray-100;
+    height: auto;
+    #page-content {
+        #region-main {
+            border: 0;
+            background: transparent;
+            .card {
+                background: transparent;
+            }
+        }
+    }
+}
+
+a {
+    outline-color: $primary;
+    color: $primary;
+    &:hover {
+        outline-color: $primary;
+        color: $secondary;
+        text-decoration: none;
+    }
+}
+
+i {
+    outline-color: $primary;
+    &:focus {
+        outline-color: $primary;
+    }
+}
+
+button {
+    outline-color: $primary;
+    &:focus {
+        outline-color: $primary;
+    }
+}
+
+input {
+    outline-color: $primary;
+    &:focus {
+        outline-color: $primary;
+    }
+}
+
+div {
+    outline-color: $primary;
+    &:focus {
+        outline-color: $primary;
+    }
+}
+
+.text-primary {
+    color: $primary!important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: $secondary;
+    font-family: $headingfont;
+    font-weight: 800;
+}
+
+h1 {
+    font-size: 34px;
+    @media (max-width: 767px) {
+        font-size: 30px;
+    }
+    @media (max-width: 600px) {
+        font-size: 26px;
+    }
+}
+
+h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    @media (max-width: 767px) {
+        font-size: 28px;
+    }
+    @media (max-width: 600px) {
+        font-size: 24px;
+    }
+}
+
+h3 {
+    font-size: 28px;
+    @media (max-width: 767px) {
+        font-size: 26px;
+    }
+    @media (max-width: 600px) {
+        font-size: 22px;
+    }
+}
+
+h4 {
+    font-size: 24px;
+    @media (max-width: 600px) {
+        font-size: 20px;
+    }
+}
+
+h5 {
+    font-size: 22px;
+    @media (max-width: 600px) {
+        font-size: 18px;
+    }
+}
+
+h6 {
+    font-size: 20px;
+    @media (max-width: 600px) {
+        font-size: 16px;
+    }
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: $white;
+    background-color: $primary;
+}
+
+.pagination .page-item.active a {
+    background-color: $primary;
+    border-color: $primary;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: $primary;
+    border-color: $primary;
+}
+
+.navbar-nav {
+    li.dropdown {
+        & > a {
+            color: $white;
+            &:hover {
+                color: $white;
+            }
+        }
+        @media (max-width: 650px) {
+            display: none;
+        }
+    }
+}
+
+div#nav-drawer {
+    a.list-group-item {
+        .media {
+            .media-body {
+                color: $gray-900;
+            }
+        }
+    }
+}
+
+.btn-link {
+    color: $primary;
+    &:hover {
+        color: $secondary;
+    }
+}
+
+.btn {
+    font-weight: 500;
+}
+
+.btn-primary, .btn-primary:focus, .btn-primary.focus {
+    background-color: $primary;
+    color: $white;
+    border: none;
+    border: 1px solid $primary;
+    border-radius: $normalBorderRadius;
+    padding: 10px 18px;
+    outline-color: $primary;
+    transition: $transition;
+    overflow: hidden;
+    box-shadow: none;
+    &:hover {
+        color: $primary!important;
+        background-color: $white!important;
+        box-shadow: $secondaryShadow;
+        outline-color: $primary;
+        border: 1px solid $gray-300;
+    }
+    &:focus {
+        outline-color: $primary;
+    }
+    &:not(:disabled) {
+        &:not(.disabled) {
+            &:active {
+                background-color: $primary;
+                color: $white;
+            }
+        }
+    }
+}
+
+.btn-primary.disabled, .btn-primary:disabled {
+    background-color: $primaryLight;
+    border-color: $primaryLight;
+}
+
+.form-control {
+    &:focus {
+        box-shadow: none;
+    }
+}
+
+a.btn-default {
+    background-color: $secondary;
+    color: $white;
+    transition: $transition;
+    &:hover {
+        background-color: $secondary;
+        color: $white;
+        box-shadow: $secondaryShadow;
+        transform: scale(1.05);
+    }
+}
+
+
+
+.btn-secondary, .btn-secondary:focus, .btn-secondary.focus {
+    background-color: $white;
+    color: $primary;
+    border: 1px solid $gray-300;
+    border-radius: $normalBorderRadius;
+    padding: 10px 18px;
+    outline-color: $primary;
+    transition: $transition;
+    box-shadow: none;
+    &:hover {
+        color: $white;
+        outline-color: $primary;
+        background-color: $primary;
+        box-shadow: $secondaryShadow;
+    }
+    &:focus {
+        outline-color: $primary;
+        box-shadow: $secondaryShadow;
+    }
+    &:not(:disabled) {
+        &:not(.disabled) {
+            &:active {
+                background-color: $secondary;
+                color: $white;
+            }
+        }
+    }
+}
+
+.btn-secondary.disabled, .btn-secondary:disabled {
+    background-color: $white;
+    border-color: $white;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show>.btn-primary.dropdown-toggle {
+    background-color: $primary;
+    border-color: $primary;
+}
+
+.text-info, .highlight {
+    color: $primary!important;
+}
+
+.alert-info, #page-admin-index .releasenoteslink, #adminsettings .form-overridden, .que .formulation, .assignfeedback_editpdf_widget .label {
+    color: $primary;
+    display: inline-block;
+    background-color: $infoBg;
+    border-color: $infoBg;
+    button.close {
+        color: $primary;
+        margin-left: 20px;
+    }
+}
+
+.alert-danger, #page-admin-index .adminerror {
+    color: $error;
+    background-color: $errorBg;
+    display: inline-block;
+    border-color: $errorBg;
+    button.close {
+        color: $error;
+        margin-left: 20px;
+    }
+}
+
+.custom-select:disabled {
+    color: $gray-900;
+    background-color: white;
+    opacity: .4;
+    cursor: not-allowed;
+}
+
+.settingsform {
+    background: white;
+    padding: 40px 20px;
+    border-radius: $normalBorderRadius;
+}
+
+p#chooseusersubmit {
+    margin-top: 20px;
+}
+
+.collapsibleregioncaption img {
+    width: 16px;
+}
+
+#page {
+    padding: 0;
+    margin-top: 64px;
+    position: relative;
+    #page-header {
+        background-color: transparent;
+        width: 100%;
+        padding-top: 20px;
+        .page-header-headings h1 {
+            font-size: 24px;
+        }
+        @media(max-width: 1199px) {
+            width: 100%;
+        }
+        &.row {
+            margin: 0;
+        }
+        & > .pt-3 {
+            padding-top: 0!important;
+            padding: 0;
+        }
+        .card-body {
+            .d-sm-flex.align-items-center {
+                display: block!important;
+            }
+        }
+        .card {
+            background-color: transparent;
+            div#page-navbar {
+                a {
+                    color: $gray-700;
+                    font-size: 14px;
+                }
+            }
+            .region_main_settings_menu_proxy {
+                background-color: transparent;
+            }
+            .context-header-settings-menu {
+                .dropdown {
+                    a.dropdown-toggle {
+                        color: $secondary;
+                        margin-left: 10px;
+                    }
+                    .dropdown-menu {
+                        margin-top: 16px;
+                        border: none;
+                        box-shadow: $secondaryShadow;
+                        overflow: visible;
+                        border-radius: $normalBorderRadius;
+                        a {
+                            &:hover {
+                                text-decoration: none;
+                            }
+                        }
+                        &::before {
+                            border: 8px solid $white;
+                            content: '';
+                            position: absolute;
+                            top: -7px;
+                            right: 16px;
+                            transform: rotate(45deg);
+                            z-index: 2;
+                        }
+                    }
+                }
+            }
+        }
+        .breadcrumb.container {
+            justify-content: space-between;
+            width: 100%!important;
+            flex-direction: row;
+            flex-direction: row-reverse;
+            max-width: 100%;
+            padding-left: 32px;
+            div#course-header {
+                display: none;
+            }
+        }
+    }
+    #page-content {
+        padding-top: 20px;
+        &.row {
+            margin: 0;
+        }
+        padding: 0;
+    }
+    .dimmed-text {
+        color: $gray-300;
+        cursor: not-allowed;
+    }
+    .dimmed {
+        color: $gray-300;
+        cursor: not-allowed;
+    }
+}
+
+div[role=main] {
+    .singlebutton {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    input[type=text], input[type=password] {
+        border: 1px solid $gray-400;
+        &:focus {
+            outline-color: $primary;
+            box-shadow: 0;
+            border: 1px solid $primary;
+        }
+    }
+    select {
+        border: 1px solid $gray-400;
+        &:focus {
+            outline-color: $primary;
+            border: 1px solid $primary;
+        }
+    }
+}
+
+// // Editor atto wrap
+
+.editor_atto_wrap {
+    box-shadow: $secondaryShadow;
+    div.editor_atto_toolbar {
+        border: none;
+        border-radius: $upnormalBorderRadius;
+        div.atto_group {
+            border: none;
+            border-radius: $normalBorderRadius;
+        }
+        button {
+            &:hover {
+                background-image: none;
+                background-color: $white;
+                i {
+                    color: $primary;
+                }
+            }
+            &:active {
+                background-image: none;
+                background-color: $white;
+                i {
+                    color: $primary;
+                }
+            }
+        }
+        button + button {
+            border: none;
+        }
+    }
+    .editor_atto_content_wrap {
+        border: none;
+        border-radius: $upnormalBorderRadius;
+        div#id_messageeditable {
+            border: none;
+            border-radius: $upnormalBorderRadius;
+        }
+    }
+}
+
+// Filemanager
+
+div.filemanager {
+    .fp-navbar {
+        .filemanager-toolbar {
+            .fp-viewbar {
+                a {
+                    margin-left: 4px;
+                }
+            }
+            .fp-pathbar {
+                margin-top: 16px;
+                margin-bottom: 8px;
+            }
+        }
+    }
+}
+
+// Áreas colapsables
+
+form {
+    .collapsible-actions {
+        margin-top: 20px;
+        margin-bottom: 40px;
+        position: relative;
+        a.collapseexpand {
+            padding-left: 0;
+            padding-right: 20px;
+            background: none;
+            color: $secondary;
+            background-color: $white;
+            padding: 10px 30px 10px 20px;
+            border-radius: $fullBorderRadius;
+            &::after {
+                content: url([[pix:theme_itragsa|collapsed]]);
+                display: inline-block;
+                position: absolute;
+                width: 12px;
+                bottom: -2px;
+                right: 10px;
+            }
+            &.collapse-all {
+                background: none;
+                background-color: $white;
+                padding: 10px 30px 10px 20px;
+                border-radius: $fullBorderRadius;
+                &::after {
+                    content: url([[pix:theme_itragsa|expanded]]);
+                    display: inline-block;
+                    position: absolute;
+                    width: 12px;
+                    bottom: -2px;
+                    right: 10px;
+                }
+            }
+        }
+    }
+    fieldset.collapsible {
+        border: none;
+        margin-bottom: 20px;
+        margin-left: 0;
+        transition: $transition;
+        legend {
+            background-color: $white;
+            position: relative;
+            margin-bottom: 0;
+            padding: 20px 40px;
+            border-radius: $normalBorderRadius;
+            font-weight: 800;
+            a.fheader {
+                display: block;
+                font-size: 24px;
+                background: none!important;
+                &::after {
+                    content: url([[pix:theme_itragsa|collapsed]]);
+                    display: inline-block;
+                    position: absolute;
+                    width: 24px;
+                    right: 20px;
+                }
+                &:hover {
+                    text-decoration: none;
+                    color: $primary;
+                    background: none!important;
+                    &::after {
+                        content: url([[pix:theme_itragsa|expanded]]);
+                        display: inline-block;
+                        position: absolute;
+                        width: 24px;
+                        right: 20px;
+                    }
+                }
+                &[aria-expanded=true] {
+                    &::after {
+                        content: url([[pix:theme_itragsa|expanded]]);
+                        display: inline-block;
+                        position: absolute;
+                        width: 24px;
+                        right: 20px;
+                    }
+                    &:hover {
+                        text-decoration: none;
+                        color: $primary;
+                        background: none!important;
+                        &::after {
+                            content: url([[pix:theme_itragsa|collapsed]]);
+                            display: inline-block;
+                            position: absolute;
+                            width: 24px;
+                            right: 20px;
+                        }
+                    }
+                }
+            }
+        }
+        .fcontainer {
+            background-color: transparent;
+            padding: 40px 20px 20px 40px;
+            border-radius: $normalBorderRadius;
+        }
+        &:hover {
+            box-shadow: $secondaryShadow;
+        }
+    }
+    div[id*="buttonar"] {
+        margin-top: 32px;
+    }
+}
+
+// Filepicker
+
+div[data-fieldtype=filepicker] {
+    div[id*='filepicker-wrapper'] {
+        .btn-secondary {
+            margin-bottom: 20px;
+        }
+        div[id*='file_info'] {
+            .filepicker-container {
+                border: 0;
+                .dndupload-arrow {
+                    background: url([[pix:theme_itragsa|filepicker]]) center no-repeat;
+                    width: 100%;
+                    background-size: contain;
+                    height: 60px;
+                    position: absolute;
+                    top: 10px;
+                }
+            }
+        }
+    }
+}
+
+// Copia de seguridad
+
+#page-backup-restorefile {
+    div[role=main] {
+        div {
+            margin-bottom: 40px;
+        }
+    }
+}
+
+#page-backup-backup {
+    .path-backup .backup_progress {
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        margin-left: 20px;
+        padding: 10px;
+    }
+    fieldset#id_rootsettings {
+        legend {
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+        .fcontainer {
+            .root_setting {
+                padding: 12px;
+                border-bottom: 1px solid $gray-200;
+                .form-group {
+                    margin-bottom: 0;
+                }
+                &:first-child {
+                    padding-top: 20px;
+                }
+                &:nth-of-type(odd) {
+                    background-color: $white;
+                }
+            }
+        }
+    }
+}
+
+// Calendar
+
+#page-calendar-view {
+    div[role=main] {
+        .calendar-controls {
+            padding: 0px 20px 24px;
+            h2 {
+                margin-bottom: 0;
+            }
+        }
+    }
+    .calendarwrapper {
+        .controls {
+            background: $white;
+            padding: 20px;
+            h2 {
+                font-size: 24px;
+            }
+        }
+        .card {
+            .description {
+                background: $white;
+            }
+            .card-footer {
+                a.card-link {
+                    padding: 10px;
+                    background: $primary;
+                    color: $white;
+                    border-radius: $normalBorderRadius;
+                    margin-top: 20px;
+                    display: inline-block;
+                    &:hover {
+                        box-shadow: $secondaryShadow;
+                        color: $primary;
+                        background-color: $white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Grupos
+
+#page-group-overview {
+    div[role=main] {
+        h3 {
+            margin-top: 40px;
+        }
+    }
+}
+
+// Banco de preguntas
+
+#page-question-edit {
+    div[role=main] {
+        table#categoryquestions {
+            margin-bottom: 20px;
+            thead {
+                background-color: $primaryLightest;
+            }
+            tbody {
+                tr {
+                    td {
+                        background: $white;
+                        padding-top: 10px;
+                        padding-bottom: 10px;
+                    }
+                    &:nth-of-type(odd) {
+                        background: $white;
+                        border-bottom: 1px dashed $gray-200;
+                    }
+                    &:nth-of-type(even) {
+                        background: $white;
+                        td {
+                            border-bottom: 1px solid $gray-400;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+body[id*='page-question'] {
+    div[role=main] {
+        h2 {
+            margin-top: 40px;
+        }
+    }
+}
+
+#page-question-category {
+    div[role=main] {
+        .box {
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: $white;
+            h3 {
+                color: $gray-900;
+            }
+        }
+    }
+}
+
+// Roles
+
+#page-admin-roles-assign {
+    div[role=main] {
+        table {
+            margin: 40px 0;
+        }
+    }
+}
+
+#page-admin-roles-check {
+    div[role=main] {
+        optgroup {
+            option {
+                padding: 4px 0;
+                &:first-child {
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+}
+
+// Importar 
+
+#page-backup-import {
+    .ics-search {
+        margin-bottom: 20px;
+        input[type=text] {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+// Cohort
+
+#page-admin-local-profilecohort-index {
+    div#profilecohort-cohortlist {
+        .card {
+            .card-header {
+                background-color: $white;
+                a {
+                    font-size: 20px;
+                    background-position: right;
+                    display: block;
+                }
+            }
+            div[role=tabpanel] {
+                background-color: $primaryLightest;
+            }
+        }
+
+    }
+}
+
+// Políticas y acuerdos
+
+#page-admin-tool-policy-managedocs {
+    div[role=main] {
+        .btn-group {
+            margin: 20px 0;
+        }
+    }
+}
+
+// Registro cumpliemto de privacidad
+
+#page-admin-tool-dataprivacy-pluginregistry {
+    div[role=main] {
+        .dataprivacy-main {
+            a.type-expand {
+                h3 {
+                    background-color: white;
+                    display: flex;
+                    align-items: center;
+                    padding: 20px;
+                }
+            }
+            div[role=contentinfo] {
+                border: 0;
+                margin-bottom: 20px;
+                background-color: $primaryLightest;
+            }
+        }
+    }
+}
+
+
+// Tabla 
+
+table.generaltable {
+    border: 0;
+    background-color: $tableBody;
+    border-radius: $normalBorderRadius;
+    padding: 20px;
+    caption {
+        color: $primary;
+    }
+    thead {
+        border: 0;
+        tr {
+            border: 0;
+            th {
+                border: 0;
+                background-color: $tableHead;
+                padding: 20px 10px;
+                border-bottom: 1px solid $gray-500;
+            }
+        }
+    }
+    tbody {
+        background-color: transparent;
+        font-size: .95em;
+        tr {
+            background-color: transparent;
+            &:nth-of-type(odd) {
+                background-color: transparent;
+                &:hover {
+                    background-color: transparent;
+                }
+            }
+            &:hover {
+                background-color: $tableBody;
+                box-shadow: $secondaryShadow;
+            }
+            td {
+                border-top: 1px solid $primaryLightest;
+                padding: 8px 4px;
+                img {
+                    width: 20px;
+                    height: auto;
+                }
+            }
+        }
+    }
+    td {
+        padding: 8px 4px;
+    }
+}
+
+// Tablist
+
+ul.nav-tabs {
+    border-bottom: 1px solid $gray-300;
+    li.nav-item {
+        a {
+            border: none;
+            color: $gray-500;
+            padding: 16px;
+            &:hover {
+                border: none;
+                color: $gray-900;
+            }
+            &.active {
+                border: none;
+                background-color: transparent;
+                border-bottom: 3px solid $primary;
+                color: $gray-900;
+                @media screen and (max-width: 768px) {
+                    color: $primary!important;
+                    background-color: transparent!important;
+                    border-bottom: 3px solid $primary;
+                }
+                &:hover {
+                    border: none;
+                    background-color: transparent;
+                    border-bottom: 3px solid $primary;
+                    color: $gray-900;
+                    @media screen and (max-width: 768px) {
+                        color: $primary!important;
+                        background-color: transparent!important;
+                        border-bottom: 3px solid $primary;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.tab-content {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+// Participantes
+
+form#participantsform {
+    .initialbar {
+        .initialbargroups {
+            ul.pagination {
+                li {
+                    margin-right: 2px;
+                    a.page-link {
+                        border: 0;
+                        margin-right: 2px;
+                        color: $primary;
+                        &:hover {
+                            box-shadow: $secondaryShadow;
+                        }
+                    }
+                    &.active {
+                        margin-right: 2px;
+                        a {
+                            border: 0;
+                            margin-right: 2px;
+                            color: $white;
+                            &:hover {
+                                box-shadow: $secondaryShadow;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.userlist table#participants {
+    overflow: visible;
+}
+
+
+// Diálogos de moodle
+
+.moodle-dialogue {
+    .moodle-dialogue-wrap {
+        border: 0;
+        border-radius: $normalBorderRadius;
+        .moodle-dialogue-hd {
+            border-bottom: 0;
+        }
+        .moodle-dialogue-bd {
+            border-bottom: 0;
+            .confirmation-dialogue {
+                .confirmation-message {
+                    margin-bottom: 20px;
+                }
+                .confirmation-buttons {
+                    input {
+                        margin-bottom: 10px;
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Arrows
+
+.pull-left, .pull-right {
+    a {
+        padding: 10px 20px;
+        border-radius: $fullBorderRadius;
+        background-color: $white;
+        color: $primary;
+        transition: $transition;
+        &:hover {
+            text-decoration: none;
+            background-color: $primary;
+            color: $white;
+        }
+    }
+}
+
+// 3.9 
+    .aalink.focus, #page-footer a:not([class]).focus, .arrow_link.focus, a:not([class]).focus, .activityinstance>a.focus, .aalink:focus, #page-footer a:not([class]):focus, .arrow_link:focus, a:not([class]):focus, .activityinstance>a:focus {
+        outline-color: $primary;
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    .aabtn.focus, .btn-link.focus, .nav-link.focus, .atto_link_button.focus, [role="button"].focus, .list-group-item-action.focus, input[type="checkbox"].focus, input[type="radio"].focus, input[type="file"].focus, input[type="image"].focus, .sr-only-focusable.focus, a.dropdown-item.focus, a.dropdown-toggle.focus, .modal-dialog[tabindex="0"].focus, .moodle-dialogue-base .closebutton.focus, button.close.focus, .aabtn:focus, .btn-link:focus, .nav-link:focus, .atto_link_button:focus, [role="button"]:focus, .list-group-item-action:focus, input[type="checkbox"]:focus, input[type="radio"]:focus, input[type="file"]:focus, input[type="image"]:focus, .sr-only-focusable:focus, a.dropdown-item:focus, a.dropdown-toggle:focus, .modal-dialog[tabindex="0"]:focus, .moodle-dialogue-base .closebutton:focus, button.close:focus {
+        box-shadow: none;
+    }
+
+    [data-region=right-hand-drawer].drawer {
+        top: 64px;
+    }
+
+    .dropdown-item.active {
+        background-color: $primary;
+    }
+
+    .mynotes-pos-rb {
+        background-color: $primary;
+        border: 2px solid $white;
+        span.pencil {
+            font-size: 14px;
+        }
+    }
+
+    div#mynotes_base.mynotes_base {
+        input[type="submit"] {
+            background-color: $primary;
+        }
+        .inputarea {
+            background: $primaryLightest;
+        }
+        ul.tabs-menu {
+            li {
+                background-color: $primary;
+                &.current {
+                    background-color: $primaryLightest;
+                }
+            }
+        }
+        .notes-info {
+            background: $primaryLightest;
+        }
+    }
+
+    .breadcrumb:not(:empty) {
+        border: 0!important;
+    }
+    .badge-info, .bg-primary {
+        background-color: $primary!important;
+    }
+    
+    a.page-link {
+        color: $primary;
+    }
+
+    .drawer .message-app {
+        height: calc(100% - 64px);
+    }
+    body#page-badges-mybadges #region-main {
+        overflow-x: hidden;
+        .badges {
+            li {
+                width: 32%;
+                .badge-name {
+                    font-weight: 800;
+                    font-size: 18px;
+                }
+                @media screen and (max-width: 980px) {
+                    width: 49%;
+                }
+                @media screen and (max-width: 600px) {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .dropdown-item:active, .dropdown-item:hover, .dropdown-item:focus, .dropdown-item:focus-within {
+        background-color: $gray-100!important;
+        color: $primary!important;
+    }
+    .dropdown-item:active a, .dropdown-item:hover a, .dropdown-item:focus a, .dropdown-item:focus-within a {
+        color: $primary;
+    }
+    .form-autocomplete-suggestions li:hover, .form-autocomplete-suggestions li:focus, .form-autocomplete-suggestions li[aria-selected="true"] {
+        background-color: $primary;
+    }
+
+    .notifytiny.debuggingmessage {
+        margin-top: 100px;
+    }  
+
+    #page-wrapper #page {
+        min-height: 70vh;
+    } 
+    
+body[id*='page-course-view'] {
+    div[id*='core_user-participantsfilter'] {
+        div[data-filterregion="filters"] > div fieldset > div {
+            flex-wrap: wrap;
+        }
+        div[data-filterregion="value"] {
+            margin: 4px;
+        }
+    }
+}
+
+body[id*='page-question-type'] {
+    div[role='main'] {
+        form {
+            div.form-group {
+                .col-form-label {
+                    display: flex;
+                    flex-direction: column;
+                    & > div {
+                        margin: 0!important;
+                        text-align: left!important;
+                        width: 100%;
+                        a.btn {
+                            display: flex;
+                            width: 100%;
+                            span {
+                                text-align: left;
+                                position: relative;
+                                display: block;
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+                .form-check {
+                    display: flex;
+                    flex-direction: column;
+                    a.btn {
+                        text-align: left;
+                        margin: 0!Important;
+                        display: flex;
+                    }
+                }
+            }
+        }
+    }
+}
+
+body#page-grade-report-quizanalytics-index {
+    nav.navbar .navbar-brand {
+        display: flex;
+        align-items: center;
+    }
+}
+
+fieldset.p-0.m-0 legend {
+    padding: 0!important;
+}
+
+.mynotes-pos-inline, .mynotes-pos-rb, .mynotes-pos-lb, .mynotes-pos-rt, .mynotes-pos-lt {
+    position: fixed;
+    z-index: 10;
+    bottom: 10px;
+    right: 10px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,47 @@
+body.pagelayout-standard {
+    &[id*='page-course-view'] {
+        div[role=main] {
+            .userprofile {
+                .page-context-header {
+                    display: none;
+                }
+                .profile_tree {
+                    display: flex;
+                    .node_category {
+                        background-color: $white!important;
+                        padding: 20px;
+                        &:nth-child(even) {
+                            margin: 0 0 20px 10px;
+                        }
+                        &:nth-child(odd) {
+                            margin: 0 10px 20px 0;
+                        }
+                        h3.lead {
+                            font-weight: 700;
+                            font-size: 24px;
+                        }
+                    }
+                    @media screen and (max-width: 767px) {
+                        column-count: 1;
+                        flex-wrap: wrap;
+                        .node_category {
+                            &:nth-child(even) {
+                                margin: 0 0 20px 0;
+                            }
+                            &:nth-child(odd) {
+                                margin: 0 0 20px 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#page-user-files section.standard-sections-course {
+    display: block;
+    img.img_profile {
+        display: none;
+    }
+}

@@ -1,0 +1,480 @@
+#page-site-index {
+    #page-wrapper {
+        #page {
+            header#page-header {
+                div#page-navbar {
+                    display: none;
+                }
+                .btn-secondary {
+                    background-color: $primary;
+                    color: $white;
+                    &:hover {
+                        background-color: $primary;
+                        color: $white;
+                    }
+                }
+                .page-context-header {
+                    display: none;
+                }
+                .action-menu-trigger {
+                    a.dropdown-toggle {
+                        color: $primary;
+                        &::after {
+                            color: $primary;
+                        }
+                    }
+                }
+            }
+            #page-content {
+                #region-main {
+                    padding-top: 0;
+                    & > .card{
+                        & > .card-body {
+                            padding-top: 0;
+                        }
+                    } 
+                    div[role=main] {
+                        max-width: 1024px;
+                        margin: 0 auto;
+                        .img_container {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex-direction: column;
+                        }
+                        .sitetopic {
+                            ul.section {
+                                padding-left: 0;
+                                .mod-indent-outer {
+                                    padding-left: 0;
+                                }
+                            }
+                            .row {
+                                margin-right: 0;
+                                margin-left: 0;
+                            }
+                        }
+                        ul.section {
+                            li.activity {
+                                background: $white;
+                                margin-bottom: 20px;
+                                padding: 20px;
+                                border-radius: $normalBorderRadius;
+                                a {
+                                    color: $primary!important;
+                                    font-weight: 700;
+                                }
+                            }
+                        } 
+                        div.box {
+                            form#coursesearch {
+                                fieldset.coursesearchbox {
+                                    max-width: 767px;
+                                    width: 100%;
+                                    position: relative;
+                                    label {
+                                        font-size: 24px;
+                                        font-weight: 600;
+                                        font-family: $headingfont;
+                                    }
+                                    input {
+                                        width: 100%;
+                                        background: transparent;
+                                        color: $gray-900;
+                                        border: 0;
+                                        border-bottom: 1px solid $gray-500;
+                                        font-size: 1.2rem;
+                                        padding: 4px;
+                                        padding-left: 10px;
+                                        margin-top: 10px;
+                                        &:focus {
+                                            border: 0;
+                                            border-bottom: 1px solid $gray-900;
+                                        }
+                                        &::placeholder {
+                                            opacity: .5;
+                                        }
+                                        @media screen and (max-width: 600px) {
+                                            font-size: 1.1.2rem;
+                                        }
+                                    }
+                                    button {
+                                        background-color: $primary;
+                                        position: absolute;
+                                        right: 5px;
+                                        padding: 10px 16px;
+                                        bottom: 30px;
+                                        transition: $transition;
+                                        color: $white;
+                                        &:hover {
+                                            box-shadow: $secondaryShadow;
+                                            color: $primary;
+                                            background-color: $white;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        div#frontpage-course-list {
+                            h2 {
+                                color: $secondary;
+                                font-size: 1.2rem;
+                                margin-top: 40px;
+                                margin-bottom: 30px;
+                            }
+                            .courses {
+                                display: flex;
+                                flex-wrap: wrap;
+                                .coursebox {
+                                    width: 32%;
+                                    background-color: $white;
+                                    border-radius: $normalBorderRadius;
+                                    border-bottom: 4px solid $white;
+                                    padding: 0;
+                                    margin: 0 1% 20px;
+                                    position: relative;
+                                    overflow: hidden;
+                                    flex-wrap: wrap;
+                                    &.even {
+                                        background-color: $white;
+                                    }
+                                    .info {
+                                        padding: 16px 16px 0;
+                                        h3.coursename {
+                                            font-size: 1.1rem;
+                                            color: $secondary;
+                                            a {
+                                                background-image: none;
+                                                padding-left: 0;
+                                                color: $secondary;
+                                                font-size: 1.1rem;
+                                                &:hover {
+                                                    text-decoration: none;
+                                                    color: $primary;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    ul.teachers {
+                                        display: none;
+                                    }
+                                    .courseimage {
+                                        display: flex;
+                                        flex-wrap: wrap;
+                                        overflow: hidden;
+                                        max-height: 140px;
+                                        img {
+                                            max-width: 100%;
+                                            height: auto;
+                                            width: 100%;
+                                        }
+                                    }
+                                    .content {
+                                        padding: 0 16px;
+                                        display: flex;
+                                        flex-direction: column;
+                                        justify-content: center;
+                                        .summary {
+                                            width: 100%;
+                                            margin-top: 10px;
+                                            display: flex;
+                                        }
+                                    }
+                                    &:hover {
+                                        box-shadow: 0 2px 8px rgba(44,62,80,.1);
+                                    }
+                                    @media(max-width: 920px) {
+                                        width: 48%;
+                                    }
+                                    @media(max-width: 600px) {
+                                        width: 100%;
+                                        margin: 0 0 20px;
+                                    }
+                                }
+                                .paging {
+                                    display: none;
+                                }
+                            }
+                        }
+                        div#frontpage-available-course-list, div#frontpage-course-list {
+                            .courses {
+                                display: flex;
+                                flex-wrap: wrap;
+                                .coursebox {
+                                    background-color: $white;
+                                    width: 31%;
+                                    margin: 0 1% 20px;
+                                    &.even {
+                                        background-color: $white;
+                                    }
+                                    .courseimage {
+                                        img {
+                                            width: 100%;
+                                        }
+                                    }
+                                    .info {
+                                        h3.coursename {
+                                            margin-top: 20px;
+                                            font-size: 1.1rem;
+                                            a {
+                                                background: transparent;
+                                                padding-left: 0;
+                                                color: $secondary;
+                                                font-size: 1.1rem;
+                                            }
+                                        }
+                                        .enrolmenticons {
+                                            display: none;
+                                        }
+                                    }
+                                    .content {
+                                        .summary, .teachers {
+                                            display: none;
+                                        }
+                                    }
+                                    @media screen and (max-width: 1024px) {
+                                        width: 48%;
+                                    }
+                                    @media screen and (max-width: 767px) {
+                                        width: 100%;
+                                        margin: 0 0 20px;
+                                    }
+                                }
+                            }
+                        }
+                        div#frontpage-category-combo, div#frontpage-category-names {
+                            .collapsible-actions {
+                                margin-top: 20px;
+                                margin-bottom: 40px;
+                                position: relative;
+                                a.collapseexpand {
+                                    padding-left: 0;
+                                    padding-right: 20px;
+                                    background: none;
+                                    color: $secondary;
+                                    background-color: $white;
+                                    padding: 10px 30px 10px 20px;
+                                    border-radius: $fullBorderRadius;
+                                    &::after {
+                                        content: url([[pix:theme_itragsa|collapsed]]);
+                                        display: inline-block;
+                                        position: absolute;
+                                        width: 12px;
+                                        bottom: -2px;
+                                        right: 10px;
+                                    }
+                                    &.collapse-all {
+                                        background: none;
+                                        background-color: $white;
+                                        padding: 10px 30px 10px 20px;
+                                        border-radius: $fullBorderRadius;
+                                        &::after {
+                                            content: url([[pix:theme_itragsa|expanded]]);
+                                            display: inline-block;
+                                            position: absolute;
+                                            width: 12px;
+                                            bottom: -2px;
+                                            right: 10px;
+                                        }
+                                    }
+                                }
+                            }
+                            .content {
+                                .subcategories {
+                                    .category {
+                                        margin-bottom: 20px;
+                                        background-color: $white;
+                                        .info {
+                                            h3.categoryname {
+                                                background-color: $white;
+                                                position: relative;
+                                                margin-bottom: 0;
+                                                padding: 20px;
+                                                border-radius: $normalBorderRadius;
+                                                font-weight: 600;
+                                            }
+                                            h4.categoryname {
+                                                padding: 10px;
+                                                margin: 10px;
+                                                font-size: 22px;
+                                                background-position: right;
+                                                background-size: 18px;
+                                                border-left: 2px solid $primary;
+                                            }
+                                        }
+                                        .content {
+                                            .courses {
+                                                display: flex;
+                                                flex-direction: column;
+                                                .coursebox {
+                                                    background-color: transparent;
+                                                    padding: 10px;
+                                                    width: 100%;
+                                                    border-bottom: 1px solid $gray-200;
+                                                    overflow: hidden;
+                                                    &.even {
+                                                        background-color: transparent;
+                                                    }
+                                                    &:hover {
+                                                        background-color: $gray-200;
+                                                    }
+                                                    .info {
+                                                        .courseimage {
+                                                            display: flex;
+                                                        }
+                                                        .coursename {
+                                                            a {
+                                                                background-image: none;
+                                                                font-size: 1.1rem;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        .subcategories {
+                                            .category {
+                                                margin: 0 20px 10px 20px;
+                                                h4.categoryname {
+                                                    background-color: transparent;
+                                                    margin: 0 0 10px;
+                                                }
+                                                .subcategories {
+                                                    .category {
+                                                        h4.categoryname {
+                                                            font-size: 18px;
+                                                            border-left: 2px solid $secondary;
+                                                        }
+                                                        .subcategories {
+                                                            .category {
+                                                                h4.categoryname {
+                                                                    font-size: 18px;
+                                                                    border-left: 2px solid $secondary;
+                                                                    background-color: $gray-200
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        &.with_children {
+                                            .info {
+                                                h3.categoryname {
+                                                    background-image: none!important;
+                                                    &::after {
+                                                        content: url([[pix:theme_itragsa|collapsed]]);
+                                                        display: inline-block;
+                                                        position: absolute;
+                                                        width: 22px;
+                                                        right: 20px;
+                                                    }
+                                                    &:hover {
+                                                        text-decoration: none;
+                                                        color: $primary;
+                                                        background-color: $white;
+                                                        &::after {
+                                                            content: url([[pix:theme_itragsa|expanded]]);
+                                                            display: inline-block;
+                                                            position: absolute;
+                                                            width: 22px;
+                                                            right: 20px;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            &[aria-expanded=true] {
+                                                .info {
+                                                    h3.categoryname {
+                                                        background-image: none!important;
+                                                        &::after {
+                                                            content: url([[pix:theme_itragsa|expanded]]);
+                                                            display: inline-block;
+                                                            position: absolute;
+                                                            width: 22px;
+                                                            right: 20px;
+                                                        }
+                                                        &:hover {
+                                                            text-decoration: none;
+                                                            color: $primary;
+                                                            background: none!important;
+                                                            &::after {
+                                                                content: url([[pix:theme_itragsa|collapsed]]);
+                                                                display: inline-block;
+                                                                position: absolute;
+                                                                width: 22px;
+                                                                right: 20px;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &.has-blocks {
+                        div#frontpage-course-list {
+                            .courses {
+                                .coursebox {
+                                    width: 32%;
+                                    margin-right: 1%;
+                                    overflow: hidden;
+                                    display: flex;
+                                    &:nth-child(2n) {
+                                        margin-right: 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    div.mdl-align {
+        min-height: auto;
+    }
+    header#page-header {
+        padding-top: 0!important;
+        .col-12.pt-3.pb-3 {
+            padding-bottom: 0!Important;
+        }
+    }
+}
+
+// Not logged in
+
+#page-site-index.notloggedin {
+    margin-left: 0;
+    nav.navbar {
+        div[data-region="drawer-toggle"] {
+            display: none!important;
+        }
+        ul.nav.navbar-nav {
+            li.nav-item {
+                display: none;
+                &.dropdown {
+                    display: block;
+                }
+            }
+        }
+    }
+    div#nav-drawer {
+        display: none;
+    }
+    aside#block-region-side-pre {
+        margin-top: 60px;
+    }
+    div#page {
+        margin-top: 70px;
+        header#page-header {
+            display: none;
+        }
+    }
+    #region-main {
+        margin-top: 40px;
+    }
+}

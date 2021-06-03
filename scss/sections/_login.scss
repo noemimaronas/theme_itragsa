@@ -1,0 +1,164 @@
+#page-login-index{
+    margin-left: 0;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    #page-wrapper{
+        background-color: transparent;
+        height: auto;
+        min-height: 100%;
+        background-image: url([[pix:theme_itragsa|login_background]]);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        .mb-sm-5, .my-sm-5 {
+            display: none;
+        }
+        h1.h2 {
+            display: none;
+        }
+        .row {
+            display: inline-block!important;
+        }
+        #page{
+            margin: 0;
+            div#region-main-box {
+                    display: flex;
+                    justify-content: center;
+                #region-main{
+                    overflow-x: unset;
+                    margin-top: 60px;
+                    .row.justify-content-md-center {
+                        justify-content: center;
+                    }
+                    .card-body {
+                        text-align: center;
+                    }
+                    div[role=main] {
+                        display: flex;
+                        align-items: center;
+                        flex-direction: column;
+                        h2 {
+                            font-size: 28px;
+                        }
+                        .col-xl-6.col-sm-8 {
+                            flex: 0 0 90%;
+                            max-width: 440px;
+                            padding: 10px;
+                            background: $white;
+                            border-radius: $normalBorderRadius;
+                            align-items: center;
+                            display: flex;
+                            h2.card-header {
+                                display: none;
+                            }
+                            .row {
+                                &::before {
+                                    content: url([[pix:theme_itragsa|login_logo]]);
+                                }
+                                .col-md-5 {
+                                    flex: 0 0 100%;
+                                    max-width: 100%;
+                                    form {
+                                        input[type=text], input[type=password] {
+                                            padding: 10px 20px;
+                                            border-radius: 6px;
+                                            background-color: $gray-100;
+                                            border: 1px solid $gray-100;
+                                            border: 0;
+                                            &:focus {
+                                                box-shadow: $secondaryShadow;
+                                                background-color: $white;
+                                                border: 1px solid $primary;
+                                            }
+                                        }
+                                        button#loginbtn {
+                                            margin-top: 20px;
+                                            font-weight: 600;
+                                            font-family: $headingfont;
+                                            color: $white;
+                                            font-size: 16px;
+                                        }
+                                        .rememberpass {
+                                            label {
+                                                margin-bottom: 0;
+                                                margin-left: 10px;
+                                                color: $gray-400;
+                                            }
+                                        }
+                                    }
+                                    .forgetpass, .mt-3 {
+                                        font-size: 14px;
+                                        color: $gray-400;
+                                    }
+                                }
+                                .btn-secondary {
+                                    width: 100%;
+                                }
+                                &.mt-3 {
+                                    margin-top: 0!important;
+                                }
+                            }
+                            @media screen and (max-width: 980px) {
+                                background-color: white;
+                            }
+                            @media screen and (max-width: 600px) {
+                                padding: 40px 20px;
+                                flex: 0 0 100%;
+                                margin-top: 0;
+                                margin-bottom: 0;
+                            }
+                        }
+                        @media screen and (max-width: 980px) {
+                            flex-direction: column;
+                            margin-top: 40px;
+                        }
+                    }
+                }
+            }
+        }
+        & > .container {
+            display: none;
+        }
+    }
+    @media screen and (max-width: 992px) {
+        background-size: cover;
+    }
+}
+
+.eupopup-container {
+    background-color: $white!important;
+    color: $gray-900!important;
+}
+
+.eupopup-button {
+    color: $primary!important;
+}
+
+.pagelayout-login {
+    nav.navbar {
+        background-color: transparent;
+        box-shadow: none;
+        a.navbar-brand, a.navbar-brand-center {
+            display: none;
+        }
+        ul.nav.navbar-nav a.dropdown-toggle {
+            border-radius: $normalBorderRadius;
+            background-color: $white;
+            margin-left: auto;
+        }
+        .usermenu {
+            display: none;
+        }
+        .navbar-nav li.dropdown {
+            @media screen and (max-width: 767px) {
+                display: block!important;
+            }
+            .dropdown-menu {
+                left: auto;
+                right: 0;
+            }
+        }
+
+    }
+}

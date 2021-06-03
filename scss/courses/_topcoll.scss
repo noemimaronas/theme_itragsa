@@ -1,0 +1,82 @@
+#page-course-view-topcoll {
+    #page-wrapper {
+        #page {
+            div[role=main] {
+                .course-content {
+                    ul.ctopics {
+                        margin-bottom: 20px;
+                        .right.side {
+                            display: none!important;
+                        }
+                        li {
+                            margin-bottom: 10px;
+                            h3 {
+                                font-size: 22px;
+                                padding: 10px 0;
+                            }
+                            div.sectionbody {
+                                padding: 20px 0;
+                                background-color: $white;
+                                .section {
+                                    margin: 0!important;
+                                }
+                            }
+                            div.summary {
+                                background-color: $white;
+                            }
+                            &#toggle-all {
+                                .content {
+                                    .sectionbody {
+                                        background-color: transparent;
+                                    }
+                                    .toggle-arrow {
+                                        margin-top: 20px;
+                                        h4 {
+                                            font-size: 16px;
+                                            text-align: right;
+                                            color: $secondary;
+                                            span {
+                                                margin-bottom: 20px;
+                                                background-color: white;
+                                                padding: 10px 30px 10px 20px;
+                                                &.on {
+                                                    background-size: 12px;
+                                                }
+                                                &.off {
+                                                    background-size: 12px;
+                                                    &:focus {
+                                                        outline: 0;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.editing {
+        #page-wrapper {
+            #page {
+                div[role=main] {
+                    .course-content {
+                        ul.ctopics {
+                            li {
+                                h3 {
+                                    a {
+                                        color: $white;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

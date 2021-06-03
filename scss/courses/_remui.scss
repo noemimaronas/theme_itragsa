@@ -1,0 +1,44 @@
+#page-course-view-remuiformat {
+    #page-content {
+        #region-main {
+            div[role=main] {
+                .course-content {
+                    .course-cover-image {
+                        background: $white!important;
+                        padding: 20px;
+                    }
+                    .text-white *{
+                        color: $primary!important;
+                        .wdm-generalsectiontitle {
+                            color: $primary!important;
+                        }
+                        .summary {
+                            color: $body!important;
+                            .no-overflow {
+                                color: $body!important;
+                            }
+                        }
+                        .teacher-label {
+                            color: $body!important;
+                        }
+                    }
+                    h2.single-section-title {
+                        font-size: 28px;
+                        font-weight: 600;
+                    }
+                    ul.remui-format-list {
+                        box-shadow: none!important;
+                    }
+                } 
+            }
+        }
+    }
+    &.pagelayout-course {
+        .container-fluid #region-main {
+            background: transparent!important;
+        }
+        .container-fluid #region-main .card>.card-body:first-of-type {
+            background: transparent!important;
+        }
+    }
+}

@@ -1,0 +1,108 @@
+body[id*='page-mod-quiz'] {
+    #page {
+        #page-content {
+            div[role=main] {
+                .quizinfo {
+                    text-align: left;
+                }
+                .generalbox#feedback {
+                    width: 100%;
+                    background: white;
+                    padding: 40px;
+                    border-radius: $normalBorderRadius;
+                    h3 {
+                        color: $secondary;
+                        font-size: 18px;
+                    }
+                    .quizgradefeedback p {
+                        font-size: 14px;
+                        color: $gray-500;
+                        text-align: left;
+                    }
+                }
+                table.quizreviewsummary {
+                    margin-bottom: 40px;
+                    tbody {
+                        tr {
+                            th {
+                                background: transparent;
+                                padding: 10px;
+                                color: $secondary;
+                                border-top: 1px solid $primaryLightest;
+                            }
+                            td {
+                                background: transparent;
+                                padding: 10px;
+                                color: $gray-500;
+                                border-top: 1px solid $primaryLightest;
+                            }
+                        }
+                    }
+                }
+                form#responseform, form.questionflagsaveform {
+                    div {
+                        &.que {
+                            .info {
+                                border: none;
+                                background-color: $primaryLightest;
+                                padding: 40px 20px;
+                                border-radius: $normalBorderRadius;
+                                color: $gray-500;
+                                h3 {
+                                    color: $secondary;
+                                    margin-bottom: 0;
+                                }
+                                a {
+                                    color: $secondary;
+                                }
+                            }
+                            .content {
+                                .formulation {
+                                    width: 100%;
+                                    padding: 40px;
+                                    background-color: $white;
+                                    box-shadow: $secondaryShadow;
+                                    border-radius: $normalBorderRadius;
+                                    .qtext {
+                                        p {
+                                            color: $secondary;
+                                            font-size: 1.2em;
+                                        }
+                                    }
+                                    .ablock {
+                                        .prompt {
+                                            color: $secondary;
+                                            margin-bottom: 20px;
+                                        }
+                                        .answer {
+                                            label {
+                                                color: $gray-900;
+                                            }
+                                            .incorrect {
+                                                .specificfeedback {
+                                                    background-color: $errorBg;
+                                                    color: $error;
+                                                }
+                                            }
+                                            .correct {
+                                                .specificfeedback {
+                                                    background-color: $primaryLightest;
+                                                    color: $primary;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .outcome {
+                                background-color: $white;
+                                color: $primary;
+                                margin-bottom: 40px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
