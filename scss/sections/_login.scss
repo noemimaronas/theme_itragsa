@@ -175,4 +175,11 @@ body#page-login-signup {
         padding: 20px 30px;
         background-color: $white;
     }
+    div#fitem_id_profile_field_cumplimentacion {
+        .col-md-3 {
+            flex: 0 0 100%;
+            width: 100%;
+            max-width: 100%;
+        }
+    }
 }
