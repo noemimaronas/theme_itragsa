@@ -196,6 +196,68 @@ div#nav-drawer {
     font-weight: 500;
 }
 
+a.btn-footer, a.btn-footer:focus, a.btn-footer.focus {
+    background-color: $white;
+    color: $secondary!important;
+    border: none;
+    border: 1px solid $secondary;
+    border-radius: $normalBorderRadius;
+    padding: 4px 8px;
+    outline-color: $secondary;
+    transition: $transition;
+    overflow: hidden;
+    box-shadow: none;
+    &:hover {
+        color: $white!important;
+        background-color: $secondary!important;
+        box-shadow: $secondaryShadow;
+        outline-color: $secondary;
+        border: 1px solid $secondary;
+        text-decoration: none;
+    }
+    &:focus {
+        outline-color: $secondary;
+    }
+    &:not(:disabled) {
+        &:not(.disabled) {
+            &:active {
+                background-color: $secondary;
+                color: $white;
+            }
+        }
+    }
+}
+.btn-tour, .btn-tour:focus, .btn-tour.focus {
+    background-color: $secondary;
+    color: $white;
+    border: none;
+    border: 1px solid $secondary;
+    border-radius: $normalBorderRadius;
+    padding: 10px 18px;
+    outline-color: $secondary;
+    transition: $transition;
+    overflow: hidden;
+    box-shadow: none;
+    display: flex;
+    &:hover {
+        color: $secondary!important;
+        background-color: $white!important;
+        box-shadow: $secondaryShadow;
+        outline-color: $secondary;
+        border: 1px solid $gray-300;
+    }
+    &:focus {
+        outline-color: $secondary;
+    }
+    &:not(:disabled) {
+        &:not(.disabled) {
+            &:active {
+                background-color: $secondary;
+                color: $white;
+            }
+        }
+    }
+}
 .btn-primary, .btn-primary:focus, .btn-primary.focus {
     background-color: $primary;
     color: $white;

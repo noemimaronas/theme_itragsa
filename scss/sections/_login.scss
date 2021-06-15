@@ -136,6 +136,9 @@
 }
 
 .pagelayout-login {
+    #signupInfo {
+        display: none;
+    }
     nav.navbar {
         background-color: transparent;
         box-shadow: none;
@@ -146,6 +149,9 @@
             border-radius: $normalBorderRadius;
             background-color: $white;
             margin-left: auto;
+        }
+        ul.social {
+            display: none;
         }
         .usermenu {
             display: none;
@@ -160,5 +166,12 @@
             }
         }
 
+    }
+}
+
+body#page-login-signup {
+    div#signupInfo {
+        padding: 20px 30px;
+        background-color: $white;
     }
 }

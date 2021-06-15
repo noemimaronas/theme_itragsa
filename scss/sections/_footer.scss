@@ -73,12 +73,7 @@ footer#page-footer {
             a {
                 i {
                     padding: 10px;
-                }
-                &:hover {
-                    i {
-                        background: $gray-200;
-                        border-radius: $fullBorderRadius;
-                    }
+                    font-size: 22px;
                 }
             }
         }

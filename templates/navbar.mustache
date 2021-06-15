@@ -22,12 +22,16 @@
             <button aria-expanded="{{#navdraweropen}}true{{/navdraweropen}}{{^navdraweropen}}false{{/navdraweropen}}" aria-controls="nav-drawer" type="button" class="btn nav-link float-sm-left" data-action="toggle-drawer" data-side="left" data-preference="drawer-open-nav">{{#pix}}i/menubars{{/pix}}<span class="sr-only">{{#str}}sidepanel, core{{/str}}</span></button>
         </div>
         <!-- Para añadir el logo manualmente y que quede siempre incrustado en el tema -->
-        <a href="{{{ config.wwwroot }}}" class="navbar-brand">
+        <div class="navbar-brand">
             <span class="logo hidden-xs-down">
-                <img src="/theme/itragsa/pix/header_logo.png" class="mr-2" alt="{{sitename}}">
-                <img src="/theme/itragsa/pix/header_logo_2.png" class="mr-2" alt="Instituto de la mujer">
+                <a href="https://tragsa-dev.inserver.es/mod/page/view.php?id=645" target="_blank">
+                    <img src="/theme/itragsa/pix/header_logo.png" class="mr-2" alt="{{sitename}}">
+                </a>
+                <a href="https://www.inmujeres.gob.es/" target="_blank">    
+                    <img src="/theme/itragsa/pix/header_logo_2.png" class="mr-2" alt="Instituto de la mujer">
+                </a>
             </span>
-        </a>
+        </div>
         <ul class="nav navbar-nav ml-auto">
             <!-- custom_menu -->
             {{{ output.custom_menu }}}
@@ -36,6 +40,10 @@
             <div class="d-none d-lg-block">
             {{{ output.search_box }}}
         </div>
+            <ul class="social">
+                <li><a href="https://www.facebook.com/desafiomujerrural/" target="_blank"><i class="fas fa fa-facebook-f"></i></a></li>
+                <li><a href="https://twitter.com/dmujerrural" target="_blank"><i class="fas fa fa-twitter"></i></a></li>
+            </ul>
             <!-- navbar_plugin_output -->
             <li class="nav-item">
             {{{ output.navbar_plugin_output }}}

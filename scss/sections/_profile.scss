@@ -65,6 +65,8 @@
                                     padding: 8px 16px;
                                     color: $white;
                                     transition: $transition;
+                                    display: flex;
+                                    text-align: center;
                                     &:hover {
                                         color: $primary;
                                     }

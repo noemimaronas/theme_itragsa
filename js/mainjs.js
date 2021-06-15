@@ -54,3 +54,25 @@ $(function() {
     $('body.pagelayout-mypublic div[role=main] .userprofile .profile_tree h3:contains(Informação sobre disciplinas)').parent().parent().remove();
     $('body.pagelayout-mypublic div[role=main] .userprofile .profile_tree h3:contains(Atividade de autenticação)').parent().parent().remove();
 })
+
+$(function() {
+    // Eliminar html info autoregistro del login
+    if($('body').attr('id') !== 'page-login-signup') {
+        $('#signupInfo').remove();
+    } 
+    // Añadir show/hide pass
+    $('body#page-login-signup div#fitem_id_password input#id_password').after('<button id="showHidePass" class="btn btn-primary ml-2" type="button"><i class="fas fa fa-eye mt-1"></i></button>');
+    $('body#page-login-signup div#fitem_id_password #showHidePass').click(function() {
+        if($('#showHidePass i').hasClass('fa-eye')) {
+            $(this).find('i').removeClass('fa-eye');
+            $(this).find('i').addClass('fa-eye-slash');
+            $(this).parent().find('input#id_password').attr('type', 'text');
+        } else {
+            $(this).find('i').removeClass('fa-eye-slash');
+            $(this).find('i').addClass('fa-eye');
+            $(this).parent().find('input#id_password').attr('type', 'password');
+        }
+    })
+    // Añadir especificacion nombre usuario
+    $('body#page-login-signup #fitem_id_username').before('<div id="fitem_id_usernamepolicyinfo" class="form-group row fitem femptylabel mb-0"><div class="col-md-3"></div><div class="col-md-9"><p>El nombre de usuario debe contener solamente caracteres alfanunméricos en minúscula y sin espacios.</p></div></div>')
+})
