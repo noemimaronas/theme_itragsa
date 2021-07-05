@@ -1292,3 +1292,16 @@ fieldset.p-0.m-0 legend {
     justify-content: center;
     align-items: center;
 }
+
+// soporte
+
+iframe#jsd-widget {
+    right: 80px!important;
+}
+
+body#page-my-index:not(.editing) [data-region="blocks-column"] {
+    .block_html, .block_html .card-body, .block_html .card-body .card-text {
+        padding: 0!important;
+        margin-bottom: 0!important;
+    }
+}
